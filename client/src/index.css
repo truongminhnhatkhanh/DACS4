@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-forest-ink: #022c22;
+  --color-emerald-pulse: #00bc7d;
+  --color-pine: #007a55;
+  --color-mint-glow: #34d399;
+  --color-jade-wash: #10b981;
+  --color-spearmint: #6ee7b7;
+  --color-signal-red: #dc2626;
+  --color-snow: #ffffff;
+  --color-paper: #f5f5f5;
+  --color-pale-sage: #c9dbd6;
+  --color-mint-mist: #d2f2e7;
+  --color-hairline: #e5e7eb;
+  --color-graphite: #71717a;
+  --color-carbon: #3d3d3f;
+  --color-obsidian: #000000;
+}
+
+body {
+  background-color: #ffffff;
+  color: #022c22;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter Tight', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  color: #022c22;
+  letter-spacing: -0.025em;
+}
+
+::selection {
+  background-color: #d2f2e7;
+  color: #022c22;
+}
+
+/* Custom Upstash-style subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}

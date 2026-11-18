@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-11-09T15:34:43.146Z" agent="DACS4-VKU" version="24.0.0">
+  <diagram id="act_lock" name="Hoạt Động Khóa Tài Khoản">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="la_adm" value="Quản Trị Viên (Admin Dashboard)" style="swimlane;startSize=26;fillColor=#FEE2E2;strokeColor=#DC2626;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="80" y="40" width="280" height="600" as="geometry" /></mxCell>
+    <mxCell id="la_srv" value="Máy Chủ Backend &amp; DB" style="swimlane;startSize=26;fillColor=#F8FAFC;strokeColor=#0F172A;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="360" y="40" width="280" height="600" as="geometry" /></mxCell>
+    <mxCell id="la_sock" value="Signaling Server &amp; User Socket" style="swimlane;startSize=26;fillColor=#EFF6FF;strokeColor=#2563EB;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="640" y="40" width="280" height="600" as="geometry" /></mxCell>
+
+    <mxCell id="ad_start" value="" style="ellipse;fillColor=#0F172A;" vertex="1" parent="la_adm"><mxGeometry x="125" y="40" width="30" height="30" as="geometry" /></mxCell>
+    <mxCell id="ad_view" value="Xem danh sách người dùng vi phạm&#xa;trong Tab 'Quản lý Người Dùng'" style="rounded=1;fillColor=#FFFFFF;strokeColor=#DC2626;" vertex="1" parent="la_adm"><mxGeometry x="40" y="100" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="ad_click" value="Bấm 'Khóa tài khoản'&#xa;PUT /api/admin/users/:id/status" style="rounded=1;fillColor=#FFFFFF;strokeColor=#DC2626;" vertex="1" parent="la_adm"><mxGeometry x="50" y="180" width="180" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="ad_update" value="Cập nhật users SET status='SUSPENDED'&#xa;trong CSDL MySQL" style="rounded=1;fillColor=#FFFFFF;strokeColor=#0F172A;" vertex="1" parent="la_srv"><mxGeometry x="40" y="180" width="200" height="45" as="geometry" /></mxCell>
+    <mxCell id="ad_call_sock" value="Gọi disconnectUserSockets(io, userId)&#xa;truy tìm socket của user trong RAM" style="rounded=1;fillColor=#FFFFFF;strokeColor=#0F172A;" vertex="1" parent="la_srv"><mxGeometry x="40" y="260" width="200" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="ad_emit" value="Phát sự kiện 'account-suspended'&#xa;&amp; socket.disconnect(true)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#2563EB;fontStyle=1;" vertex="1" parent="la_sock"><mxGeometry x="40" y="260" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="ad_kick" value="Ép đăng xuất trên trình duyệt user,&#xa;hủy kết nối WebRTC &amp; chặn API tiếp theo" style="rounded=1;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="la_sock"><mxGeometry x="35" y="350" width="210" height="55" as="geometry" /></mxCell>
+
+    <mxCell id="ad_ok" value="Thông báo: Đã khóa &amp; ngắt kết nối" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="la_adm"><mxGeometry x="50" y="450" width="180" height="45" as="geometry" /></mxCell>
+    <mxCell id="ad_end" value="" style="ellipse;shape=endState;fillColor=#059669;strokeColor=#FFFFFF;strokeWidth=2;" vertex="1" parent="la_adm"><mxGeometry x="125" y="530" width="30" height="30" as="geometry" /></mxCell>
+
+    <mxCell id="ead1" style="strokeColor=#DC2626;" edge="1" parent="1" source="ad_start" target="ad_view"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ead2" style="strokeColor=#DC2626;" edge="1" parent="1" source="ad_view" target="ad_click"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ead3" style="strokeColor=#DC2626;" edge="1" parent="1" source="ad_click" target="ad_update"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ead4" style="strokeColor=#0F172A;" edge="1" parent="1" source="ad_update" target="ad_call_sock"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ead5" style="strokeColor=#2563EB;" edge="1" parent="1" source="ad_call_sock" target="ad_emit"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ead6" style="strokeColor=#2563EB;" edge="1" parent="1" source="ad_emit" target="ad_kick"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ead7" style="strokeColor=#059669;" edge="1" parent="1" source="ad_update" target="ad_ok"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="500" y="472" /></Array></mxGeometry></mxCell>
+    <mxCell id="ead8" style="strokeColor=#059669;" edge="1" parent="1" source="ad_ok" target="ad_end"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel>
+  </diagram>
+</mxfile>

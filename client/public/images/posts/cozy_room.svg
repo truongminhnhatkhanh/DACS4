@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="roomBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c1917" />
+      <stop offset="100%" stop-color="#292524" />
+    </linearGradient>
+    <radialGradient id="lampWarm" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.8" />
+      <stop offset="40%" stop-color="#f59e0b" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="480" fill="url(#roomBg)" />
+
+  <!-- String Fairy Lights -->
+  <path d="M 0 40 Q 200 100 400 50 Q 600 100 800 40" fill="none" stroke="#78716c" stroke-width="1.5" />
+  <circle cx="100" cy="65" r="6" fill="#fef08a" />
+  <circle cx="200" cy="88" r="6" fill="#fef08a" />
+  <circle cx="300" cy="74" r="6" fill="#fef08a" />
+  <circle cx="400" cy="50" r="6" fill="#fef08a" />
+  <circle cx="500" cy="74" r="6" fill="#fef08a" />
+  <circle cx="600" cy="88" r="6" fill="#fef08a" />
+  <circle cx="700" cy="65" r="6" fill="#fef08a" />
+
+  <!-- Floor -->
+  <rect y="360" width="800" height="120" fill="#1c1917" />
+  <ellipse cx="400" cy="410" rx="260" ry="45" fill="#44403c" />
+
+  <!-- Cozy Armchair -->
+  <g transform="translate(320, 200)">
+    <!-- Backrest -->
+    <rect x="30" y="20" width="100" height="110" rx="20" fill="#d97706" />
+    <!-- Cushions -->
+    <rect x="20" y="90" width="120" height="45" rx="14" fill="#b45309" />
+    <!-- Armrests -->
+    <rect x="5" y="70" width="30" height="65" rx="15" fill="#b45309" />
+    <rect x="125" y="70" width="30" height="65" rx="15" fill="#b45309" />
+    <!-- Throw Blanket -->
+    <path d="M 40 40 Q 80 50 110 90 L 100 120 L 40 100 Z" fill="#0d9488" opacity="0.9" />
+    <!-- Legs -->
+    <line x1="25" y1="135" x2="15" y2="175" stroke="#78350f" stroke-width="6" stroke-linecap="round" />
+    <line x1="135" y1="135" x2="145" y2="175" stroke="#78350f" stroke-width="6" stroke-linecap="round" />
+  </g>
+
+  <!-- Bookshelf -->
+  <g transform="translate(100, 160)">
+    <rect x="0" y="0" width="120" height="180" rx="4" fill="#44403c" stroke="#57534e" stroke-width="2" />
+    <line x1="0" y1="60" x2="120" y2="60" stroke="#57534e" stroke-width="3" />
+    <line x1="0" y1="120" x2="120" y2="120" stroke="#57534e" stroke-width="3" />
+    <!-- Books -->
+    <rect x="15" y="15" width="14" height="45" fill="#e11d48" />
+    <rect x="32" y="10" width="18" height="50" fill="#0284c7" />
+    <rect x="53" y="20" width="12" height="40" fill="#16a34a" />
+    <rect x="70" y="12" width="22" height="48" fill="#d97706" />
+    <!-- Small Plant -->
+    <ellipse cx="60" cy="115" rx="14" ry="4" fill="#78716c" />
+    <circle cx="60" cy="100" r="10" fill="#22c55e" />
+  </g>
+
+  <rect x="32" y="32" width="180" height="34" rx="17" fill="rgba(24,24,27,0.85)" stroke="#57534e" />
+  <circle cx="50" cy="49" r="5" fill="#f59e0b" />
+  <text x="64" y="54" fill="#fef3c7" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">Góc Nhỏ • Chữa Lành</text>
+</svg>

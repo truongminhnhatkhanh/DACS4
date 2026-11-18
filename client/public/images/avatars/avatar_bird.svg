@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+    <rect width="120" height="120" rx="60" fill="#bae6fd" />
+    
+    <!-- Dove Body -->
+    <circle cx="60" cy="60" r="28" fill="#ffffff" />
+    <!-- Eye -->
+    <circle cx="48" cy="56" r="3" fill="#0f172a" />
+    <circle cx="47" cy="55" r="1" fill="#ffffff" />
+    <!-- Beak -->
+    <polygon points="36,60 25,63 36,67" fill="#f59e0b" />
+    <!-- Wing -->
+    <path d="M 58 58 Q 85 55 82 78 Q 65 78 58 58 Z" fill="#e2e8f0" />
+    <!-- Olive sprig in beak -->
+    <path d="M 28 64 Q 18 68 15 76" fill="none" stroke="#15803d" stroke-width="2" />
+    <ellipse cx="16" cy="70" rx="4" ry="2.5" fill="#22c55e" transform="rotate(-30, 16, 70)" />
+  
+  </svg>

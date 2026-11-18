@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+    <rect width="120" height="120" rx="60" fill="#fed7aa" />
+    
+    <!-- Cat Ears -->
+    <polygon points="30,55 42,22 60,45" fill="#f97316" />
+    <polygon points="35,50 43,30 54,45" fill="#fbcfe8" />
+    <polygon points="90,55 78,22 60,45" fill="#f97316" />
+    <polygon points="85,50 77,30 66,45" fill="#fbcfe8" />
+    <!-- Head -->
+    <circle cx="60" cy="65" r="32" fill="#fb923c" />
+    <!-- Eyes (happy closed) -->
+    <path d="M 44 62 Q 50 56 56 62" fill="none" stroke="#431407" stroke-width="3" stroke-linecap="round" />
+    <path d="M 64 62 Q 70 56 76 62" fill="none" stroke="#431407" stroke-width="3" stroke-linecap="round" />
+    <!-- Nose & Mouth -->
+    <polygon points="57,69 63,69 60,73" fill="#f43f5e" />
+    <path d="M 55 75 Q 60 79 65 75" fill="none" stroke="#431407" stroke-width="2.5" stroke-linecap="round" />
+    <!-- Blushing cheeks -->
+    <ellipse cx="42" cy="72" rx="5" ry="3" fill="#f43f5e" opacity="0.4" />
+    <ellipse cx="78" cy="72" rx="5" ry="3" fill="#f43f5e" opacity="0.4" />
+  
+  </svg>

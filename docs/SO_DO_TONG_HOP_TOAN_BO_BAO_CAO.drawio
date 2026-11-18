@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-11-09T15:34:43.150Z" agent="DACS4-VKU" version="24.0.0">
+  <diagram id="m_1" name="Hình 3.2.1 Use Case Tổng Quát"><mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1200" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <mxCell id="sys_box" value="HỆ THỐNG NỀN TẢNG TÂM SỰ ẨN DANH &amp; BẢO VỆ NGƯỜI DÙNG (DACS4 - HELI)" style="shape=swimlane;startSize=32;rounded=1;arcSize=8;fillColor=#FAFAFA;strokeColor=#0F172A;strokeWidth=2;fontStyle=1;fontSize=14;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="240" y="30" width="1180" height="1100" as="geometry" />
+    </mxCell>
+
+    <mxCell id="act_guest" value="Khách Ẩn Danh&#xa;(Guest User)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#E2E8F0;strokeColor=#475569;strokeWidth=1.5;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="60" y="140" width="55" height="95" as="geometry" />
+    </mxCell>
+
+    <mxCell id="act_user" value="Người Dùng Đăng Ký&#xa;(Registered User)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#D1FAE5;strokeColor=#059669;strokeWidth=2;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="60" y="490" width="55" height="95" as="geometry" />
+    </mxCell>
+
+    <mxCell id="gen_user" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=12;strokeColor=#475569;strokeWidth=1.8;" edge="1" parent="1" source="act_user" target="act_guest"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <mxCell id="act_ai" value="Hệ Thống AI (Gemini)&#xa;(Moderation &amp; Safety)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=2;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="1480" y="380" width="55" height="95" as="geometry" />
+    </mxCell>
+
+    <mxCell id="act_admin" value="Quản Trị Viên&#xa;(System Admin)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=2;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+      <mxGeometry x="1480" y="880" width="55" height="95" as="geometry" />
+    </mxCell>
+
+    <mxCell id="grp1" value="Phân hệ 1: Xác Thực &amp; Tài Khoản Ẩn Danh" style="swimlane;startSize=24;rounded=1;arcSize=6;fillColor=#F0FDF4;strokeColor=#86EFAC;strokeWidth=1.2;fontStyle=1;fontSize=11;fontColor=#166534;" vertex="1" parent="sys_box">
+      <mxGeometry x="30" y="45" width="1120" height="180" as="geometry" />
+    </mxCell>
+    <mxCell id="uc_guest_session" value="Tạo phiên khách ẩn danh&#xa;&amp; lưu Recovery Code" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#059669;strokeWidth=1.5;fontSize=11;" vertex="1" parent="grp1"><mxGeometry x="20" y="40" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_auth" value="Đăng ký &amp; Đăng nhập&#xa;tài khoản" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#059669;strokeWidth=2;fontStyle=1;fontSize=11;" vertex="1" parent="grp1"><mxGeometry x="20" y="110" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_recover" value="Khôi phục tài khoản&#xa;bằng Recovery Code O(1)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=1.5;fontSize=11;" vertex="1" parent="grp1"><mxGeometry x="290" y="75" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_migrate" value="Tự động di trú&#xa;mã bcrypt cũ" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#D97706;strokeWidth=1.2;fontSize=10;" vertex="1" parent="grp1"><mxGeometry x="540" y="75" width="150" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_profile" value="Quản lý hồ sơ cá nhân&#xa;(Bút danh, Avatar, Bio)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#059669;strokeWidth=1.5;fontSize=11;" vertex="1" parent="grp1"><mxGeometry x="760" y="40" width="170" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_security_acc" value="Cấp lại Recovery Code&#xa;&amp; Đổi mật khẩu" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#059669;strokeWidth=1.5;fontSize=11;" vertex="1" parent="grp1"><mxGeometry x="760" y="110" width="170" height="50" as="geometry" /></mxCell>
+
+    <mxCell id="rel_auth_recover" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#CA8A04;strokeWidth=1.5;fontSize=10;" edge="1" parent="grp1" source="uc_recover" target="uc_auth"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rel_rec_mig" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#D97706;strokeWidth=1.2;fontSize=10;" edge="1" parent="grp1" source="uc_migrate" target="uc_recover"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rel_prof_sec" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#059669;strokeWidth=1.2;fontSize=10;" edge="1" parent="grp1" source="uc_security_acc" target="uc_profile"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <mxCell id="grp2" value="Phân hệ 2: Cộng Đồng Tâm Sự Ẩn Danh &amp; Kiểm Duyệt AI" style="swimlane;startSize=24;rounded=1;arcSize=6;fillColor=#EFF6FF;strokeColor=#93C5FD;strokeWidth=1.2;fontStyle=1;fontSize=11;fontColor=#1E40AF;" vertex="1" parent="sys_box">
+      <mxGeometry x="30" y="240" width="1120" height="260" as="geometry" />
+    </mxCell>
+    <mxCell id="uc_create_post" value="Đăng bài viết tâm sự" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=2;fontStyle=1;fontSize=12;" vertex="1" parent="grp2"><mxGeometry x="20" y="50" width="170" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_private_post" value="Lưu nhật ký riêng tư&#xa;(Chỉ mình tôi)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1.2;fontSize=10;" vertex="1" parent="grp2"><mxGeometry x="260" y="35" width="150" height="45" as="geometry" /></mxCell>
+    <mxCell id="uc_edit_post" value="Chỉnh sửa / Xóa bài viết" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1.2;fontSize=10;" vertex="1" parent="grp2"><mxGeometry x="260" y="90" width="150" height="45" as="geometry" /></mxCell>
+    <mxCell id="uc_ai_mod" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&#xa;Kiểm duyệt độc hại tự động&#xa;&amp; sinh câu an ủi (Gemini AI)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=2;fontStyle=1;fontSize=11;fontColor=#92400E;" vertex="1" parent="grp2"><mxGeometry x="500" y="45" width="210" height="60" as="geometry" /></mxCell>
+    <mxCell id="uc_interact" value="Tương tác bài viết&#xa;(Like &amp; Bookmarks)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1.5;fontSize=11;" vertex="1" parent="grp2"><mxGeometry x="20" y="160" width="170" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_comment_nested" value="Bình luận &amp; Thảo luận đa cấp&#xa;(Trả lời trực tiếp theo từng cấp)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1.5;fontSize=11;" vertex="1" parent="grp2"><mxGeometry x="260" y="160" width="190" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_report" value="Báo cáo vi phạm bài viết" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontSize=11;" vertex="1" parent="grp2"><mxGeometry x="510" y="160" width="170" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_search" value="Tìm kiếm theo từ khóa&#xa;&amp; Lọc theo 8 nhãn cảm xúc" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;strokeWidth=1.5;fontSize=11;" vertex="1" parent="grp2"><mxGeometry x="780" y="160" width="190" height="50" as="geometry" /></mxCell>
+
+    <mxCell id="rel_post_ai" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#D97706;strokeWidth=1.8;fontSize=10;" edge="1" parent="grp2" source="uc_create_post" target="uc_ai_mod"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rel_post_priv" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#2563EB;strokeWidth=1.2;fontSize=10;" edge="1" parent="grp2" source="uc_private_post" target="uc_create_post"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rel_post_edit" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#2563EB;strokeWidth=1.2;fontSize=10;" edge="1" parent="grp2" source="uc_edit_post" target="uc_create_post"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rel_interact_comm" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#2563EB;strokeWidth=1.2;fontSize=10;" edge="1" parent="grp2" source="uc_comment_nested" target="uc_interact"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rel_interact_rep" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#DC2626;strokeWidth=1.2;fontSize=10;" edge="1" parent="grp2" source="uc_report" target="uc_comment_nested"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <mxCell id="grp3" value="Phân hệ 3: Trợ Lý AI Heli Buddy Độc Lập" style="swimlane;startSize=24;rounded=1;arcSize=6;fillColor=#FFFBEB;strokeColor=#FDE68A;strokeWidth=1.2;fontStyle=1;fontSize=11;fontColor=#92400E;" vertex="1" parent="sys_box">
+      <mxGeometry x="30" y="515" width="1120" height="150" as="geometry" />
+    </mxCell>
+    <mxCell id="uc_chat_heli" value="Trò chuyện 1-1 với Heli Buddy&#xa;(Empathetic Companion)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D97706;strokeWidth=2;fontStyle=1;fontSize=12;" vertex="1" parent="grp3"><mxGeometry x="20" y="50" width="190" height="55" as="geometry" /></mxCell>
+    <mxCell id="uc_heli_analysis" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&#xa;Phân tích cảm xúc &amp; chủ đề&#xa;(Học tập, Tình cảm, Công việc)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontSize=11;fontColor=#92400E;" vertex="1" parent="grp3"><mxGeometry x="320" y="50" width="200" height="55" as="geometry" /></mxCell>
+    <mxCell id="uc_heli_suggest" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;&#xa;Gợi ý hành động nhỏ,&#xa;thực tế giải tỏa tâm lý" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D97706;strokeWidth=1.2;fontSize=10;" vertex="1" parent="grp3"><mxGeometry x="610" y="50" width="180" height="55" as="geometry" /></mxCell>
+    <mxCell id="uc_heli_history" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&#xa;Quản lý &amp; Xem lại lịch sử phiên" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D97706;strokeWidth=1.2;fontSize=10;" vertex="1" parent="grp3"><mxGeometry x="870" y="50" width="180" height="55" as="geometry" /></mxCell>
+
+    <mxCell id="rel_h_1" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#D97706;strokeWidth=1.5;fontSize=10;" edge="1" parent="grp3" source="uc_chat_heli" target="uc_heli_analysis"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rel_h_2" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#D97706;strokeWidth=1.2;fontSize=10;" edge="1" parent="grp3" source="uc_heli_suggest" target="uc_heli_analysis"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rel_h_3" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#D97706;strokeWidth=1.2;fontSize=10;" edge="1" parent="grp3" source="uc_chat_heli" target="uc_heli_history"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="115" y="125" /><mxPoint x="960" y="125" /></Array></mxGeometry></mxCell>
+
+    <mxCell id="grp4" value="Phân hệ 4 &amp; 5: Kết Nối Chat 1-1 P2P WebRTC &amp; AI Safety Shield" style="swimlane;startSize=24;rounded=1;arcSize=6;fillColor=#FEF2F2;strokeColor=#FECACA;strokeWidth=1.2;fontStyle=1;fontSize=11;fontColor=#991B1B;" vertex="1" parent="sys_box">
+      <mxGeometry x="30" y="680" width="1120" height="180" as="geometry" />
+    </mxCell>
+    <mxCell id="uc_p2p" value="Trò chuyện 1-1 P2P WebRTC&#xa;(100% dữ liệu lưu RAM)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7C3AED;strokeWidth=2;fontStyle=1;fontSize=11;" vertex="1" parent="grp4"><mxGeometry x="20" y="45" width="190" height="55" as="geometry" /></mxCell>
+    <mxCell id="uc_p2p_topic" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&#xa;Ghép cặp theo chủ đề tâm sự" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F5F3FF;strokeColor=#7C3AED;strokeWidth=1.2;fontSize=10;" vertex="1" parent="grp4"><mxGeometry x="20" y="115" width="190" height="45" as="geometry" /></mxCell>
+    <mxCell id="uc_p2p_block" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;&#xa;Chặn (Block) &amp; Bỏ qua ghép mới" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7C3AED;strokeWidth=1.2;fontSize=10;" vertex="1" parent="grp4"><mxGeometry x="280" y="45" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_safety_scan" value="Quét rủi ro On-Demand&#xa;(AI Safety Shield)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=2;fontStyle=1;fontSize=11;" vertex="1" parent="grp4"><mxGeometry x="540" y="45" width="190" height="55" as="geometry" /></mxCell>
+    <mxCell id="uc_safety_hotline" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;&#xa;Cảnh báo đỏ &amp; Hotline khẩn cấp&#xa;(111, 113, 1900 6233)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#DC2626;strokeWidth=1.5;fontSize=10;fontColor=#991B1B;" vertex="1" parent="grp4"><mxGeometry x="810" y="45" width="200" height="55" as="geometry" /></mxCell>
+    <mxCell id="uc_safety_log" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&#xa;Lưu vết nhật ký cảnh báo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DC2626;strokeWidth=1.2;fontSize=10;" vertex="1" parent="grp4"><mxGeometry x="680" y="115" width="180" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="rel_p_topic" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#7C3AED;strokeWidth=1.2;fontSize=10;" edge="1" parent="grp4" source="uc_p2p" target="uc_p2p_topic"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rel_p_block" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#7C3AED;strokeWidth=1.2;fontSize=10;" edge="1" parent="grp4" source="uc_p2p_block" target="uc_p2p"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rel_p_safety" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#DC2626;strokeWidth=1.5;fontSize=10;" edge="1" parent="grp4" source="uc_safety_scan" target="uc_p2p"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rel_s_hotline" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#DC2626;strokeWidth=1.5;fontSize=10;" edge="1" parent="grp4" source="uc_safety_hotline" target="uc_safety_scan"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rel_s_log" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#DC2626;strokeWidth=1.2;fontSize=10;" edge="1" parent="grp4" source="uc_safety_scan" target="uc_safety_log"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <mxCell id="grp5" value="Phân hệ 6: Quản Trị Hệ Thống (System Admin)" style="swimlane;startSize=24;rounded=1;arcSize=6;fillColor=#F8FAFC;strokeColor=#CBD5E1;strokeWidth=1.2;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="sys_box">
+      <mxGeometry x="30" y="875" width="1120" height="185" as="geometry" />
+    </mxCell>
+    <mxCell id="uc_admin_users" value="Quản lý Người Dùng" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DC2626;strokeWidth=1.5;fontSize=11;" vertex="1" parent="grp5"><mxGeometry x="20" y="50" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_admin_lock" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;&#xa;Khóa tài khoản &amp; ngắt Socket" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontSize=10;" vertex="1" parent="grp5"><mxGeometry x="260" y="50" width="190" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_admin_posts" value="Quản lý Bài viết &amp; Xóa vi phạm" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DC2626;strokeWidth=1.5;fontSize=11;" vertex="1" parent="grp5"><mxGeometry x="20" y="115" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_admin_reports" value="Xử lý Báo cáo vi phạm" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DC2626;strokeWidth=2;fontStyle=1;fontSize=11;" vertex="1" parent="grp5"><mxGeometry x="540" y="50" width="190" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_admin_resolve" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&#xa;Duyệt xóa bài / Bác bỏ tố cáo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.2;fontSize=10;" vertex="1" parent="grp5"><mxGeometry x="810" y="50" width="190" height="50" as="geometry" /></mxCell>
+    <mxCell id="uc_admin_stats" value="Xem Dashboard thống kê&#xa;&amp; Nhật ký AI Safety Logs" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0F172A;strokeWidth=1.5;fontSize=11;" vertex="1" parent="grp5"><mxGeometry x="540" y="115" width="190" height="50" as="geometry" /></mxCell>
+
+    <mxCell id="rel_adm_lock" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#DC2626;strokeWidth=1.2;fontSize=10;" edge="1" parent="grp5" source="uc_admin_lock" target="uc_admin_users"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rel_adm_rep" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;dashed=1;endArrow=open;endSize=8;strokeColor=#DC2626;strokeWidth=1.2;fontSize=10;" edge="1" parent="grp5" source="uc_admin_reports" target="uc_admin_resolve"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <!-- Actor Links (Clean, No Criss-Crossing) -->
+    <mxCell id="link_g_session" style="strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="act_guest" target="uc_guest_session"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="link_g_auth" style="strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="act_guest" target="uc_auth"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="link_g_search" style="strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="act_guest" target="uc_search"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="180" y="220" /><mxPoint x="180" y="445" /></Array></mxGeometry></mxCell>
+    <mxCell id="link_g_p2p" style="strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="act_guest" target="uc_p2p"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="180" y="240" /><mxPoint x="180" y="750" /></Array></mxGeometry></mxCell>
+
+    <mxCell id="link_u_profile" style="strokeColor=#059669;strokeWidth=1.8;" edge="1" parent="1" source="act_user" target="uc_profile"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="200" y="520" /><mxPoint x="200" y="100" /></Array></mxGeometry></mxCell>
+    <mxCell id="link_u_post" style="strokeColor=#059669;strokeWidth=1.8;" edge="1" parent="1" source="act_user" target="uc_create_post"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="210" y="530" /><mxPoint x="210" y="325" /></Array></mxGeometry></mxCell>
+    <mxCell id="link_u_interact" style="strokeColor=#059669;strokeWidth=1.8;" edge="1" parent="1" source="act_user" target="uc_interact"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="210" y="540" /><mxPoint x="210" y="435" /></Array></mxGeometry></mxCell>
+    <mxCell id="link_u_heli" style="strokeColor=#059669;strokeWidth=1.8;" edge="1" parent="1" source="act_user" target="uc_chat_heli"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <mxCell id="link_ai_mod" style="strokeColor=#D97706;strokeWidth=2;" edge="1" parent="1" source="act_ai" target="uc_ai_mod"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1460" y="410" /><mxPoint x="1460" y="320" /></Array></mxGeometry></mxCell>
+    <mxCell id="link_ai_heli" style="strokeColor=#D97706;strokeWidth=2;" edge="1" parent="1" source="act_ai" target="uc_heli_analysis"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1460" y="430" /><mxPoint x="1460" y="590" /><mxPoint x="650" y="590" /></Array></mxGeometry></mxCell>
+    <mxCell id="link_ai_safety" style="strokeColor=#D97706;strokeWidth=2;" edge="1" parent="1" source="act_ai" target="uc_safety_scan"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1460" y="450" /><mxPoint x="1460" y="750" /></Array></mxGeometry></mxCell>
+
+    <mxCell id="link_adm_users" style="strokeColor=#DC2626;strokeWidth=2;" edge="1" parent="1" source="act_admin" target="uc_admin_users"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1460" y="910" /><mxPoint x="1460" y="950" /><mxPoint x="220" y="950" /></Array></mxGeometry></mxCell>
+    <mxCell id="link_adm_posts" style="strokeColor=#DC2626;strokeWidth=2;" edge="1" parent="1" source="act_admin" target="uc_admin_posts"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1460" y="920" /><mxPoint x="1460" y="1015" /><mxPoint x="220" y="1015" /></Array></mxGeometry></mxCell>
+    <mxCell id="link_adm_reports" style="strokeColor=#DC2626;strokeWidth=2;" edge="1" parent="1" source="act_admin" target="uc_admin_reports"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1460" y="930" /><mxPoint x="1460" y="950" /></Array></mxGeometry></mxCell>
+    <mxCell id="link_adm_stats" style="strokeColor=#DC2626;strokeWidth=2;" edge="1" parent="1" source="act_admin" target="uc_admin_stats"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1460" y="940" /><mxPoint x="1460" y="1015" /></Array></mxGeometry></mxCell>
+
+  </root>
+</mxGraphModel></diagram>
+  <diagram id="m_2" name="Hình 3.2.2 UC Xác Thực"><mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="box" value="HỆ THỐNG XÁC THỰC &amp; TÀI KHOẢN ẨN DANH" style="shape=swimlane;startSize=26;rounded=1;arcSize=8;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=1.5;fontStyle=1;fontSize=12;fontColor=#166534;" vertex="1" parent="1"><mxGeometry x="200" y="40" width="760" height="650" as="geometry" /></mxCell>
+    <mxCell id="act_g" value="Khách Ẩn Danh" style="shape=umlActor;fillColor=#E2E8F0;strokeColor=#475569;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="60" y="140" width="50" height="90" as="geometry" /></mxCell>
+    <mxCell id="act_u" value="Người Dùng Đăng Ký" style="shape=umlActor;fillColor=#D1FAE5;strokeColor=#059669;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="60" y="440" width="50" height="90" as="geometry" /></mxCell>
+    <mxCell id="gen" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=10;strokeColor=#475569;" edge="1" parent="1" source="act_u" target="act_g"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="u1" value="Tạo phiên khách ẩn danh&#xa;&amp; lưu Recovery Code" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#16A34A;" vertex="1" parent="box"><mxGeometry x="40" y="40" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="u2" value="Đăng ký tài khoản mới" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#16A34A;" vertex="1" parent="box"><mxGeometry x="40" y="110" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="u3" value="Đăng nhập tài khoản" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#16A34A;" vertex="1" parent="box"><mxGeometry x="40" y="180" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="u4" value="Khôi phục tài khoản&#xa;bằng Recovery Code O(1)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;fontStyle=1;" vertex="1" parent="box"><mxGeometry x="340" y="180" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="u5" value="Tự động di trú bcrypt cũ" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFBEB;strokeColor=#D97706;" vertex="1" parent="box"><mxGeometry x="580" y="180" width="160" height="50" as="geometry" /></mxCell>
+    <mxCell id="u6" value="Quản lý hồ sơ cá nhân&#xa;(Bút danh, Avatar, Bio)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#16A34A;" vertex="1" parent="box"><mxGeometry x="40" y="320" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="u7" value="Đổi mật khẩu tài khoản" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#16A34A;" vertex="1" parent="box"><mxGeometry x="340" y="320" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="u8" value="Cấp lại Recovery Code mới&#xa;&amp; vô hiệu hóa mã cũ" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#16A34A;" vertex="1" parent="box"><mxGeometry x="340" y="400" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="u9" value="Đóng / Xóa tài khoản cá nhân" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="box"><mxGeometry x="40" y="490" width="200" height="50" as="geometry" /></mxCell>
+
+    <mxCell id="r1" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#CA8A04;" edge="1" parent="box" source="u4" target="u3"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="r2" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#D97706;" edge="1" parent="box" source="u5" target="u4"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="r3" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#16A34A;" edge="1" parent="box" source="u7" target="u6"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="r4" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#16A34A;" edge="1" parent="box" source="u8" target="u6"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <mxCell id="e_g1" style="strokeColor=#475569;" edge="1" parent="1" source="act_g" target="u1"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="e_g2" style="strokeColor=#475569;" edge="1" parent="1" source="act_g" target="u2"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="e_g3" style="strokeColor=#475569;" edge="1" parent="1" source="act_g" target="u3"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="e_u1" style="strokeColor=#059669;" edge="1" parent="1" source="act_u" target="u6"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="e_u2" style="strokeColor=#059669;" edge="1" parent="1" source="act_u" target="u9"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel></diagram>
+  <diagram id="m_3" name="Hình 3.2.3 UC Cộng Đồng"><mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="box" value="PHÂN HỆ CỘNG ĐỒNG TÂM SỰ ẨN DANH" style="shape=swimlane;startSize=26;rounded=1;arcSize=8;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontStyle=1;fontSize=12;fontColor=#1E40AF;" vertex="1" parent="1"><mxGeometry x="200" y="40" width="780" height="650" as="geometry" /></mxCell>
+    <mxCell id="act_u" value="Người Dùng" style="shape=umlActor;fillColor=#D1FAE5;strokeColor=#059669;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="60" y="280" width="50" height="90" as="geometry" /></mxCell>
+    <mxCell id="act_ai" value="Google Gemini AI" style="shape=umlActor;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="1060" y="100" width="50" height="90" as="geometry" /></mxCell>
+
+    <mxCell id="c1" value="Đăng bài viết tâm sự" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;fontStyle=1;" vertex="1" parent="box"><mxGeometry x="40" y="40" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="c2" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&#xa;Kiểm duyệt độc hại tự động&#xa;&amp; sinh câu an ủi (Gemini)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontStyle=1;" vertex="1" parent="box"><mxGeometry x="340" y="35" width="220" height="60" as="geometry" /></mxCell>
+    <mxCell id="c3" value="Lưu nhật ký riêng tư&#xa;(Chỉ mình tôi)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;" vertex="1" parent="box"><mxGeometry x="340" y="115" width="180" height="45" as="geometry" /></mxCell>
+    <mxCell id="c4" value="Chỉnh sửa / Xóa bài cá nhân" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;" vertex="1" parent="box"><mxGeometry x="340" y="180" width="180" height="45" as="geometry" /></mxCell>
+    <mxCell id="c5" value="Thích bài viết (Like)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;" vertex="1" parent="box"><mxGeometry x="40" y="280" width="180" height="45" as="geometry" /></mxCell>
+    <mxCell id="c6" value="Lưu bài vào Bookmarks" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;" vertex="1" parent="box"><mxGeometry x="40" y="350" width="180" height="45" as="geometry" /></mxCell>
+    <mxCell id="c7" value="Bình luận &amp; Thảo luận đa cấp" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;" vertex="1" parent="box"><mxGeometry x="40" y="420" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="c8" value="Báo cáo vi phạm bài viết" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="box"><mxGeometry x="340" y="420" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="c9" value="Tìm kiếm theo từ khóa&#xa;&amp; Lọc theo 8 nhãn cảm xúc" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2563EB;" vertex="1" parent="box"><mxGeometry x="40" y="520" width="200" height="50" as="geometry" /></mxCell>
+
+    <mxCell id="rc1" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="box" source="c1" target="c2"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rc2" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#2563EB;" edge="1" parent="box" source="c3" target="c1"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rc3" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#2563EB;" edge="1" parent="box" source="c4" target="c1"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rc4" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#DC2626;" edge="1" parent="box" source="c8" target="c7"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <mxCell id="ec1" style="strokeColor=#059669;" edge="1" parent="1" source="act_u" target="c1"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ec2" style="strokeColor=#059669;" edge="1" parent="1" source="act_u" target="c5"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ec3" style="strokeColor=#059669;" edge="1" parent="1" source="act_u" target="c6"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ec4" style="strokeColor=#059669;" edge="1" parent="1" source="act_u" target="c7"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ec5" style="strokeColor=#059669;" edge="1" parent="1" source="act_u" target="c9"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ec_ai" style="strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="1" source="act_ai" target="c2"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel></diagram>
+  <diagram id="m_4" name="Hình 3.2.4 UC AI Heli Buddy"><mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="box" value="PHÂN HỆ TRỢ LÝ AI HELI BUDDY ĐỘC LẬP" style="shape=swimlane;startSize=26;rounded=1;arcSize=8;fillColor=#FFFBEB;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=12;fontColor=#92400E;" vertex="1" parent="1"><mxGeometry x="200" y="40" width="760" height="500" as="geometry" /></mxCell>
+    <mxCell id="act_u" value="Người Dùng" style="shape=umlActor;fillColor=#D1FAE5;strokeColor=#059669;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="60" y="200" width="50" height="90" as="geometry" /></mxCell>
+    <mxCell id="act_ai" value="Gemini AI (Heli)" style="shape=umlActor;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="1040" y="150" width="50" height="90" as="geometry" /></mxCell>
+
+    <mxCell id="h1" value="Trò chuyện 1-1 với Heli Buddy&#xa;(Empathetic Companion)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D97706;fontStyle=1;" vertex="1" parent="box"><mxGeometry x="40" y="60" width="220" height="60" as="geometry" /></mxCell>
+    <mxCell id="h2" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&#xa;Phân tích cảm xúc &amp; chủ đề&#xa;(Học tập, Tình cảm, Công việc)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;" vertex="1" parent="box"><mxGeometry x="360" y="60" width="220" height="60" as="geometry" /></mxCell>
+    <mxCell id="h3" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;&#xa;Gợi ý hành động nhỏ, thực tế&#xa;để giải tỏa căng thẳng" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D97706;" vertex="1" parent="box"><mxGeometry x="360" y="160" width="220" height="55" as="geometry" /></mxCell>
+    <mxCell id="h4" value="Quản lý &amp; Xem lại lịch sử phiên chat&#xa;(Tạo mới, Đổi tên phiên)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D97706;" vertex="1" parent="box"><mxGeometry x="40" y="240" width="220" height="60" as="geometry" /></mxCell>
+
+    <mxCell id="rh1" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="box" source="h1" target="h2"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rh2" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#D97706;" edge="1" parent="box" source="h3" target="h2"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rh3" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#D97706;" edge="1" parent="box" source="h1" target="h4"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <mxCell id="eh1" style="strokeColor=#059669;" edge="1" parent="1" source="act_u" target="h1"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="eh2" style="strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="1" source="act_ai" target="h2"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel></diagram>
+  <diagram id="m_5" name="Hình 3.2.5 UC AI Safety Shield"><mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="box" value="PHÂN HỆ AI SAFETY SHIELD (BẢO VỆ NGƯỜI DÙNG)" style="shape=swimlane;startSize=26;rounded=1;arcSize=8;fillColor=#FEF2F2;strokeColor=#DC2626;strokeWidth=1.5;fontStyle=1;fontSize=12;fontColor=#991B1B;" vertex="1" parent="1"><mxGeometry x="200" y="40" width="760" height="500" as="geometry" /></mxCell>
+    <mxCell id="act_u" value="Người Dùng P2P" style="shape=umlActor;fillColor=#D1FAE5;strokeColor=#059669;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="60" y="160" width="50" height="90" as="geometry" /></mxCell>
+    <mxCell id="act_ai" value="Gemini Safety AI" style="shape=umlActor;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="1040" y="120" width="50" height="90" as="geometry" /></mxCell>
+    <mxCell id="act_adm" value="Quản Trị Viên" style="shape=umlActor;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="1040" y="360" width="50" height="90" as="geometry" /></mxCell>
+
+    <mxCell id="s1" value="Quét rủi ro On-Demand&#xa;(AI Safety Shield)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DC2626;fontStyle=1;" vertex="1" parent="box"><mxGeometry x="40" y="50" width="200" height="55" as="geometry" /></mxCell>
+    <mxCell id="s2" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&#xa;Phân tích bẫy việc làm, lừa tiền&#xa;&amp; đánh giá 3 cấp độ (Safe/Warn/Danger)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#DC2626;" vertex="1" parent="box"><mxGeometry x="340" y="45" width="240" height="65" as="geometry" /></mxCell>
+    <mxCell id="s3" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;&#xa;Bật cảnh báo đỏ khẩn cấp &amp;&#xa;Hotline cứu nạn (111, 113, 1900 6233)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;fontStyle=1;" vertex="1" parent="box"><mxGeometry x="340" y="160" width="240" height="60" as="geometry" /></mxCell>
+    <mxCell id="s4" value="Lưu nhật ký cảnh báo an toàn&#xa;(safety_shield_logs)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DC2626;" vertex="1" parent="box"><mxGeometry x="340" y="270" width="220" height="50" as="geometry" /></mxCell>
+    <mxCell id="s5" value="Xem &amp; giám sát nhật ký an toàn" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DC2626;" vertex="1" parent="box"><mxGeometry x="40" y="270" width="200" height="50" as="geometry" /></mxCell>
+
+    <mxCell id="rs1" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="box" source="s1" target="s2"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rs2" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="box" source="s3" target="s2"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rs3" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#DC2626;" edge="1" parent="box" source="s2" target="s4"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <mxCell id="es1" style="strokeColor=#059669;" edge="1" parent="1" source="act_u" target="s1"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es_ai" style="strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="1" source="act_ai" target="s2"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es_adm" style="strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="1" source="act_adm" target="s5"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel></diagram>
+  <diagram id="m_6" name="Hình 3.2.6 UC Chat P2P"><mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="box" value="PHÂN HỆ CHAT 1-1 P2P WEBRTC" style="shape=swimlane;startSize=26;rounded=1;arcSize=8;fillColor=#F5F3FF;strokeColor=#7C3AED;strokeWidth=1.5;fontStyle=1;fontSize=12;fontColor=#5B21B6;" vertex="1" parent="1"><mxGeometry x="200" y="40" width="760" height="500" as="geometry" /></mxCell>
+    <mxCell id="act_p" value="Người Dùng P2P" style="shape=umlActor;fillColor=#D1FAE5;strokeColor=#059669;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="60" y="200" width="50" height="90" as="geometry" /></mxCell>
+
+    <mxCell id="p1" value="Trò chuyện 1-1 qua DataChannel&#xa;(100% dữ liệu lưu trong RAM)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7C3AED;fontStyle=1;" vertex="1" parent="box"><mxGeometry x="40" y="60" width="220" height="60" as="geometry" /></mxCell>
+    <mxCell id="p2" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&#xa;Ghép cặp ngẫu nhiên / theo chủ đề&#xa;(Signaling Server Socket.io)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F5F3FF;strokeColor=#7C3AED;" vertex="1" parent="box"><mxGeometry x="360" y="60" width="220" height="60" as="geometry" /></mxCell>
+    <mxCell id="p3" value="Bỏ qua (Skip) &amp; tìm bạn mới" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7C3AED;" vertex="1" parent="box"><mxGeometry x="40" y="180" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="p4" value="Chặn người dùng (Block)&#xa;&amp; không ghép cặp lại" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7C3AED;" vertex="1" parent="box"><mxGeometry x="360" y="180" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="p5" value="Báo cáo đối phương vi phạm" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="box"><mxGeometry x="360" y="270" width="200" height="50" as="geometry" /></mxCell>
+
+    <mxCell id="rp1" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#7C3AED;strokeWidth=1.5;" edge="1" parent="box" source="p1" target="p2"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rp2" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#7C3AED;" edge="1" parent="box" source="p4" target="p1"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="rp3" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#DC2626;" edge="1" parent="box" source="p5" target="p1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <mxCell id="ep1" style="strokeColor=#059669;" edge="1" parent="1" source="act_p" target="p1"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ep2" style="strokeColor=#059669;" edge="1" parent="1" source="act_p" target="p3"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel></diagram>
+  <diagram id="m_7" name="Hình 3.2.7 UC Admin"><mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="box" value="PHÂN HỆ QUẢN TRỊ HỆ THỐNG (ADMIN DASHBOARD)" style="shape=swimlane;startSize=26;rounded=1;arcSize=8;fillColor=#F8FAFC;strokeColor=#0F172A;strokeWidth=1.5;fontStyle=1;fontSize=12;fontColor=#0F172A;" vertex="1" parent="1"><mxGeometry x="200" y="40" width="760" height="500" as="geometry" /></mxCell>
+    <mxCell id="act_adm" value="Quản Trị Viên&#xa;(Admin)" style="shape=umlActor;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="60" y="200" width="50" height="90" as="geometry" /></mxCell>
+
+    <mxCell id="a1" value="Quản lý Người Dùng" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DC2626;fontStyle=1;" vertex="1" parent="box"><mxGeometry x="40" y="50" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="a2" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;&#xa;Khóa tài khoản (SUSPENDED)&#xa;&amp; chủ động ngắt Socket" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="box"><mxGeometry x="360" y="45" width="220" height="60" as="geometry" /></mxCell>
+    <mxCell id="a3" value="Quản trị Bài viết &amp; Xóa bài vi phạm" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DC2626;" vertex="1" parent="box"><mxGeometry x="40" y="140" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="a4" value="Xử lý Báo cáo vi phạm" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#DC2626;fontStyle=1;" vertex="1" parent="box"><mxGeometry x="40" y="230" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="a5" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&#xa;Xác nhận vi phạm / Bác bỏ tố cáo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="box"><mxGeometry x="360" y="230" width="220" height="50" as="geometry" /></mxCell>
+    <mxCell id="a6" value="Xem Dashboard thống kê thời gian thực&#xa;&amp; Nhật ký AI Safety Logs" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#0F172A;" vertex="1" parent="box"><mxGeometry x="40" y="320" width="240" height="60" as="geometry" /></mxCell>
+
+    <mxCell id="ra1" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="box" source="a2" target="a1"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ra2" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="box" source="a4" target="a5"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <mxCell id="ea1" style="strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="1" source="act_adm" target="a1"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ea2" style="strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="1" source="act_adm" target="a3"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ea3" style="strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="1" source="act_adm" target="a4"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ea4" style="strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="1" source="act_adm" target="a6"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel></diagram>
+  <diagram id="m_8" name="Hình 3.3.1 Activity Đăng Bài"><mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="lu" value="Người Dùng (Client)" style="swimlane;startSize=26;fillColor=#ECFDF5;strokeColor=#059669;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="60" y="40" width="280" height="740" as="geometry" /></mxCell>
+    <mxCell id="ls" value="Máy Chủ Backend &amp; DB" style="swimlane;startSize=26;fillColor=#F8FAFC;strokeColor=#475569;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="340" y="40" width="340" height="740" as="geometry" /></mxCell>
+    <mxCell id="lai" value="Google Gemini AI" style="swimlane;startSize=26;fillColor=#FEF3C7;strokeColor=#D97706;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="680" y="40" width="280" height="740" as="geometry" /></mxCell>
+
+    <mxCell id="s_start" value="" style="ellipse;fillColor=#0F172A;" vertex="1" parent="lu"><mxGeometry x="125" y="40" width="30" height="30" as="geometry" /></mxCell>
+    <mxCell id="s_form" value="Nhập nội dung, chọn nhãn cảm xúc&#xa;&amp; chọn chế độ (Công khai / Riêng tư)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#059669;" vertex="1" parent="lu"><mxGeometry x="40" y="100" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="s_sub" value="Bấm 'Chia sẻ tâm sự'&#xa;(POST /api/posts)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#059669;" vertex="1" parent="lu"><mxGeometry x="65" y="180" width="150" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="s_db_pend" value="Lưu bài viết vào CSDL&#xa;với trạng thái PENDING" style="rounded=1;fillColor=#FFFFFF;strokeColor=#475569;" vertex="1" parent="ls"><mxGeometry x="90" y="180" width="160" height="45" as="geometry" /></mxCell>
+    <mxCell id="s_call_ai" value="Gọi inspectAndComfort()&#xa;gửi text tới Gemini" style="rounded=1;fillColor=#FFFFFF;strokeColor=#475569;" vertex="1" parent="ls"><mxGeometry x="90" y="250" width="160" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="s_ai_eval" value="Quét độc hại, thù ghét, tự hại&#xa;&amp; sinh câu an ủi đồng cảm" style="rounded=1;fillColor=#FFFFFF;strokeColor=#D97706;fontStyle=1;" vertex="1" parent="lai"><mxGeometry x="50" y="245" width="180" height="55" as="geometry" /></mxCell>
+
+    <mxCell id="s_dec_tox" value="Nội dung an toàn?" style="rhombus;fillColor=#FEF9C3;strokeColor=#CA8A04;" vertex="1" parent="ls"><mxGeometry x="100" y="330" width="140" height="70" as="geometry" /></mxCell>
+    <mxCell id="s_rej" value="Cập nhật REJECTED&#xa;&amp; lưu lý do vi phạm" style="rounded=1;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="ls"><mxGeometry x="10" y="440" width="140" height="50" as="geometry" /></mxCell>
+    <mxCell id="s_ui_err" value="Hiển thị lý do bị từ chối" style="rounded=1;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="lu"><mxGeometry x="65" y="440" width="150" height="50" as="geometry" /></mxCell>
+    <mxCell id="s_end_rej" value="" style="ellipse;shape=endState;fillColor=#DC2626;strokeColor=#FFFFFF;strokeWidth=2;" vertex="1" parent="lu"><mxGeometry x="125" y="520" width="30" height="30" as="geometry" /></mxCell>
+
+    <mxCell id="s_appr" value="Cập nhật APPROVED &amp;&#xa;Lưu câu an ủi của Heli vào Comments" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;fontStyle=1;" vertex="1" parent="ls"><mxGeometry x="170" y="440" width="160" height="55" as="geometry" /></mxCell>
+    <mxCell id="s_dec_priv" value="is_private = true?" style="rhombus;fillColor=#FEF9C3;strokeColor=#CA8A04;" vertex="1" parent="ls"><mxGeometry x="190" y="530" width="120" height="60" as="geometry" /></mxCell>
+    <mxCell id="s_ui_feed" value="Hiển thị bài viết trên Bảng tin&#xa;&amp; hiện toast an ủi từ Heli" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="lu"><mxGeometry x="50" y="620" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="s_end_ok" value="" style="ellipse;shape=endState;fillColor=#059669;strokeColor=#FFFFFF;strokeWidth=2;" vertex="1" parent="lu"><mxGeometry x="125" y="690" width="30" height="30" as="geometry" /></mxCell>
+
+    <mxCell id="es1" style="strokeColor=#059669;" edge="1" parent="1" source="s_start" target="s_form"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es2" style="strokeColor=#059669;" edge="1" parent="1" source="s_form" target="s_sub"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es3" style="strokeColor=#059669;" edge="1" parent="1" source="s_sub" target="s_db_pend"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es4" style="strokeColor=#475569;" edge="1" parent="1" source="s_db_pend" target="s_call_ai"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es5" style="strokeColor=#D97706;" edge="1" parent="1" source="s_call_ai" target="s_ai_eval"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es6" style="strokeColor=#D97706;" edge="1" parent="1" source="s_ai_eval" target="s_dec_tox"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="820" y="365" /></Array></mxGeometry></mxCell>
+    <mxCell id="es7" value="Không an toàn" style="strokeColor=#DC2626;" edge="1" parent="1" source="s_dec_tox" target="s_rej"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es8" style="strokeColor=#DC2626;" edge="1" parent="1" source="s_rej" target="s_ui_err"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es9" style="strokeColor=#DC2626;" edge="1" parent="1" source="s_ui_err" target="s_end_rej"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es10" value="Hợp lệ" style="strokeColor=#059669;" edge="1" parent="1" source="s_dec_tox" target="s_appr"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es11" style="strokeColor=#059669;" edge="1" parent="1" source="s_appr" target="s_dec_priv"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es12" value="Công khai" style="strokeColor=#059669;" edge="1" parent="1" source="s_dec_priv" target="s_ui_feed"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="490" y="645" /></Array></mxGeometry></mxCell>
+    <mxCell id="es13" style="strokeColor=#059669;" edge="1" parent="1" source="s_ui_feed" target="s_end_ok"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel></diagram>
+  <diagram id="m_9" name="Hình 3.3.2 Activity Khôi Phục Mã"><mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="lu2" value="Người Dùng (Client)" style="swimlane;startSize=26;fillColor=#FEF9C3;strokeColor=#CA8A04;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="80" y="40" width="300" height="740" as="geometry" /></mxCell>
+    <mxCell id="ls2" value="Máy Chủ Backend &amp; CSDL" style="swimlane;startSize=26;fillColor=#F8FAFC;strokeColor=#059669;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="380" y="40" width="460" height="740" as="geometry" /></mxCell>
+
+    <mxCell id="r_start" value="" style="ellipse;fillColor=#0F172A;" vertex="1" parent="lu2"><mxGeometry x="135" y="40" width="30" height="30" as="geometry" /></mxCell>
+    <mxCell id="r_open" value="Mở modal 'Khôi phục tài khoản'&#xa;&amp; nhập mã 16 ký tự" style="rounded=1;fillColor=#FFFFFF;strokeColor=#CA8A04;" vertex="1" parent="lu2"><mxGeometry x="60" y="100" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="r_sub" value="Gửi POST /api/auth/recover&#xa;{ recoveryCode }" style="rounded=1;fillColor=#FFFFFF;strokeColor=#CA8A04;" vertex="1" parent="lu2"><mxGeometry x="60" y="180" width="180" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="r_hash" value="Server băm HMAC-SHA256&#xa;hashRecoveryCode(code)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#059669;" vertex="1" parent="ls2"><mxGeometry x="130" y="180" width="200" height="45" as="geometry" /></mxCell>
+    <mxCell id="r_query" value="Truy vấn CSDL qua index&#xa;recovery_token_hash = hash (O(1))" style="rounded=1;fillColor=#FFFFFF;strokeColor=#059669;" vertex="1" parent="ls2"><mxGeometry x="130" y="250" width="200" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="r_find" value="Tìm thấy tài khoản?" style="rhombus;fillColor=#FEF9C3;strokeColor=#CA8A04;" vertex="1" parent="ls2"><mxGeometry x="155" y="320" width="150" height="70" as="geometry" /></mxCell>
+
+    <mxCell id="r_leg" value="Kiểm tra bcrypt_compare&#xa;(Legacy User cũ)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#D97706;" vertex="1" parent="ls2"><mxGeometry x="270" y="415" width="170" height="50" as="geometry" /></mxCell>
+    <mxCell id="r_dec_leg" value="Khớp bcrypt?" style="rhombus;fillColor=#FEF9C3;strokeColor=#CA8A04;" vertex="1" parent="ls2"><mxGeometry x="295" y="490" width="120" height="60" as="geometry" /></mxCell>
+    <mxCell id="r_mig" value="Auto-migrate sang HMAC hash&#xa;&amp; xóa recovery_code_hash cũ" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="ls2"><mxGeometry x="260" y="580" width="190" height="50" as="geometry" /></mxCell>
+
+    <mxCell id="r_dec_lock" value="Trạng thái tài khoản&#xa;SUSPENDED / DELETED?" style="rhombus;fillColor=#FEF9C3;strokeColor=#CA8A04;" vertex="1" parent="ls2"><mxGeometry x="30" y="410" width="180" height="75" as="geometry" /></mxCell>
+    <mxCell id="r_err_lock" value="Báo lỗi 403: Tài khoản đã bị khóa" style="rounded=1;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="lu2"><mxGeometry x="60" y="425" width="180" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="r_jwt" value="Cấp JWT session token mới&#xa;&amp; cập nhật last_login_at" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;fontStyle=1;" vertex="1" parent="ls2"><mxGeometry x="30" y="530" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="r_ui_ok" value="Đăng nhập thành công,&#xa;khuyến nghị cấp lại mã mới" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="lu2"><mxGeometry x="60" y="530" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="r_end_ok" value="" style="ellipse;shape=endState;fillColor=#059669;strokeColor=#FFFFFF;strokeWidth=2;" vertex="1" parent="lu2"><mxGeometry x="135" y="620" width="30" height="30" as="geometry" /></mxCell>
+
+    <mxCell id="er1" style="strokeColor=#CA8A04;" edge="1" parent="1" source="r_start" target="r_open"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er2" style="strokeColor=#CA8A04;" edge="1" parent="1" source="r_open" target="r_sub"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er3" style="strokeColor=#059669;" edge="1" parent="1" source="r_sub" target="r_hash"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er4" style="strokeColor=#059669;" edge="1" parent="1" source="r_hash" target="r_query"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er5" style="strokeColor=#059669;" edge="1" parent="1" source="r_query" target="r_find"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er6" value="Có" style="strokeColor=#059669;" edge="1" parent="1" source="r_find" target="r_dec_lock"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er7" value="Không" style="strokeColor=#D97706;" edge="1" parent="1" source="r_find" target="r_leg"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er8" style="strokeColor=#D97706;" edge="1" parent="1" source="r_leg" target="r_dec_leg"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er9" value="Khớp" style="strokeColor=#059669;" edge="1" parent="1" source="r_dec_leg" target="r_mig"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er10" style="strokeColor=#059669;" edge="1" parent="1" source="r_mig" target="r_dec_lock"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="600" y="660" /><mxPoint x="490" y="660" /></Array></mxGeometry></mxCell>
+    <mxCell id="er11" value="Bị khóa" style="strokeColor=#DC2626;" edge="1" parent="1" source="r_dec_lock" target="r_err_lock"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er12" value="ACTIVE" style="strokeColor=#059669;" edge="1" parent="1" source="r_dec_lock" target="r_jwt"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er13" style="strokeColor=#059669;" edge="1" parent="1" source="r_jwt" target="r_ui_ok"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er14" style="strokeColor=#059669;" edge="1" parent="1" source="r_ui_ok" target="r_end_ok"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel></diagram>
+  <diagram id="m_10" name="Hình 3.3.3 Activity Safety Shield"><mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="lu3" value="Người Dùng Chat P2P" style="swimlane;startSize=26;fillColor=#FEF2F2;strokeColor=#DC2626;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="80" y="40" width="280" height="660" as="geometry" /></mxCell>
+    <mxCell id="ls3" value="Máy Chủ Backend &amp; DB" style="swimlane;startSize=26;fillColor=#F8FAFC;strokeColor=#475569;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="360" y="40" width="320" height="660" as="geometry" /></mxCell>
+    <mxCell id="lai3" value="Gemini AI Engine" style="swimlane;startSize=26;fillColor=#FEF3C7;strokeColor=#D97706;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="680" y="40" width="280" height="660" as="geometry" /></mxCell>
+
+    <mxCell id="sf_start" value="" style="ellipse;fillColor=#0F172A;" vertex="1" parent="lu3"><mxGeometry x="125" y="40" width="30" height="30" as="geometry" /></mxCell>
+    <mxCell id="sf_click" value="Bấm 'Quét an toàn AI'&#xa;khi thấy tin nhắn khả nghi" style="rounded=1;fillColor=#FFFFFF;strokeColor=#DC2626;" vertex="1" parent="lu3"><mxGeometry x="50" y="100" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="sf_send" value="Gửi lịch sử chat RAM&#xa;POST /api/safety/inspect" style="rounded=1;fillColor=#FFFFFF;strokeColor=#DC2626;" vertex="1" parent="lu3"><mxGeometry x="50" y="180" width="180" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="sf_call" value="Gọi analyzeSafetyRisk()&#xa;gửi hội thoại cho Gemini" style="rounded=1;fillColor=#FFFFFF;strokeColor=#475569;" vertex="1" parent="ls3"><mxGeometry x="80" y="180" width="160" height="45" as="geometry" /></mxCell>
+    <mxCell id="sf_eval" value="Phân tích bẫy việc làm, lừa tình,&#xa;dụ dỗ nạp tiền, tống tiền" style="rounded=1;fillColor=#FFFFFF;strokeColor=#D97706;fontStyle=1;" vertex="1" parent="lai3"><mxGeometry x="40" y="175" width="200" height="55" as="geometry" /></mxCell>
+
+    <mxCell id="sf_dec" value="Mức độ rủi ro?" style="rhombus;fillColor=#FEF9C3;strokeColor=#CA8A04;" vertex="1" parent="ls3"><mxGeometry x="95" y="270" width="130" height="70" as="geometry" /></mxCell>
+
+    <mxCell id="sf_safe" value="Trả về SAFE (Bình thường)" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="ls3"><mxGeometry x="10" y="380" width="140" height="45" as="geometry" /></mxCell>
+    <mxCell id="sf_dang" value="Trả về DANGER (Nguy hiểm)&#xa;&amp; lưu safety_shield_logs" style="rounded=1;fillColor=#FEE2E2;strokeColor=#DC2626;fontStyle=1;" vertex="1" parent="ls3"><mxGeometry x="160" y="380" width="150" height="55" as="geometry" /></mxCell>
+
+    <mxCell id="sf_ui_safe" value="Báo an toàn, tiếp tục trò chuyện" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="lu3"><mxGeometry x="50" y="380" width="180" height="45" as="geometry" /></mxCell>
+    <mxCell id="sf_ui_dang" value="Bật Popup Cảnh Báo Đỏ Khẩn Cấp,&#xa;hiển thị Hotline (111, 113, 1900 6233)&#xa;&amp; nút 'Ngắt kết nối ngay'" style="rounded=1;fillColor=#FEE2E2;strokeColor=#DC2626;fontStyle=1;" vertex="1" parent="lu3"><mxGeometry x="35" y="480" width="210" height="65" as="geometry" /></mxCell>
+    <mxCell id="sf_end" value="" style="ellipse;shape=endState;fillColor=#059669;strokeColor=#FFFFFF;strokeWidth=2;" vertex="1" parent="lu3"><mxGeometry x="125" y="590" width="30" height="30" as="geometry" /></mxCell>
+
+    <mxCell id="esf1" style="strokeColor=#DC2626;" edge="1" parent="1" source="sf_start" target="sf_click"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf2" style="strokeColor=#DC2626;" edge="1" parent="1" source="sf_click" target="sf_send"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf3" style="strokeColor=#DC2626;" edge="1" parent="1" source="sf_send" target="sf_call"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf4" style="strokeColor=#475569;" edge="1" parent="1" source="sf_call" target="sf_eval"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf5" style="strokeColor=#D97706;" edge="1" parent="1" source="sf_eval" target="sf_dec"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="820" y="305" /></Array></mxGeometry></mxCell>
+    <mxCell id="esf6" value="SAFE" style="strokeColor=#059669;" edge="1" parent="1" source="sf_dec" target="sf_safe"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf7" value="DANGER" style="strokeColor=#DC2626;" edge="1" parent="1" source="sf_dec" target="sf_dang"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf8" style="strokeColor=#059669;" edge="1" parent="1" source="sf_safe" target="sf_ui_safe"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf9" style="strokeColor=#DC2626;" edge="1" parent="1" source="sf_dang" target="sf_ui_dang"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="595" y="512" /></Array></mxGeometry></mxCell>
+    <mxCell id="esf10" style="strokeColor=#059669;" edge="1" parent="1" source="sf_ui_safe" target="sf_end"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf11" style="strokeColor=#DC2626;" edge="1" parent="1" source="sf_ui_dang" target="sf_end"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel></diagram>
+  <diagram id="m_11" name="Hình 3.3.4 Activity Khóa User"><mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="la_adm" value="Quản Trị Viên (Admin Dashboard)" style="swimlane;startSize=26;fillColor=#FEE2E2;strokeColor=#DC2626;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="80" y="40" width="280" height="600" as="geometry" /></mxCell>
+    <mxCell id="la_srv" value="Máy Chủ Backend &amp; DB" style="swimlane;startSize=26;fillColor=#F8FAFC;strokeColor=#0F172A;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="360" y="40" width="280" height="600" as="geometry" /></mxCell>
+    <mxCell id="la_sock" value="Signaling Server &amp; User Socket" style="swimlane;startSize=26;fillColor=#EFF6FF;strokeColor=#2563EB;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="640" y="40" width="280" height="600" as="geometry" /></mxCell>
+
+    <mxCell id="ad_start" value="" style="ellipse;fillColor=#0F172A;" vertex="1" parent="la_adm"><mxGeometry x="125" y="40" width="30" height="30" as="geometry" /></mxCell>
+    <mxCell id="ad_view" value="Xem danh sách người dùng vi phạm&#xa;trong Tab 'Quản lý Người Dùng'" style="rounded=1;fillColor=#FFFFFF;strokeColor=#DC2626;" vertex="1" parent="la_adm"><mxGeometry x="40" y="100" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="ad_click" value="Bấm 'Khóa tài khoản'&#xa;PUT /api/admin/users/:id/status" style="rounded=1;fillColor=#FFFFFF;strokeColor=#DC2626;" vertex="1" parent="la_adm"><mxGeometry x="50" y="180" width="180" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="ad_update" value="Cập nhật users SET status='SUSPENDED'&#xa;trong CSDL MySQL" style="rounded=1;fillColor=#FFFFFF;strokeColor=#0F172A;" vertex="1" parent="la_srv"><mxGeometry x="40" y="180" width="200" height="45" as="geometry" /></mxCell>
+    <mxCell id="ad_call_sock" value="Gọi disconnectUserSockets(io, userId)&#xa;truy tìm socket của user trong RAM" style="rounded=1;fillColor=#FFFFFF;strokeColor=#0F172A;" vertex="1" parent="la_srv"><mxGeometry x="40" y="260" width="200" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="ad_emit" value="Phát sự kiện 'account-suspended'&#xa;&amp; socket.disconnect(true)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#2563EB;fontStyle=1;" vertex="1" parent="la_sock"><mxGeometry x="40" y="260" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="ad_kick" value="Ép đăng xuất trên trình duyệt user,&#xa;hủy kết nối WebRTC &amp; chặn API tiếp theo" style="rounded=1;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="la_sock"><mxGeometry x="35" y="350" width="210" height="55" as="geometry" /></mxCell>
+
+    <mxCell id="ad_ok" value="Thông báo: Đã khóa &amp; ngắt kết nối" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="la_adm"><mxGeometry x="50" y="450" width="180" height="45" as="geometry" /></mxCell>
+    <mxCell id="ad_end" value="" style="ellipse;shape=endState;fillColor=#059669;strokeColor=#FFFFFF;strokeWidth=2;" vertex="1" parent="la_adm"><mxGeometry x="125" y="530" width="30" height="30" as="geometry" /></mxCell>
+
+    <mxCell id="ead1" style="strokeColor=#DC2626;" edge="1" parent="1" source="ad_start" target="ad_view"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ead2" style="strokeColor=#DC2626;" edge="1" parent="1" source="ad_view" target="ad_click"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ead3" style="strokeColor=#DC2626;" edge="1" parent="1" source="ad_click" target="ad_update"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ead4" style="strokeColor=#0F172A;" edge="1" parent="1" source="ad_update" target="ad_call_sock"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ead5" style="strokeColor=#2563EB;" edge="1" parent="1" source="ad_call_sock" target="ad_emit"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ead6" style="strokeColor=#2563EB;" edge="1" parent="1" source="ad_emit" target="ad_kick"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="ead7" style="strokeColor=#059669;" edge="1" parent="1" source="ad_update" target="ad_ok"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="500" y="472" /></Array></mxGeometry></mxCell>
+    <mxCell id="ead8" style="strokeColor=#059669;" edge="1" parent="1" source="ad_ok" target="ad_end"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel></diagram>
+  <diagram id="m_12" name="Hình 3.4 ERD Cơ Sở Dữ Liệu"><mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+
+    <mxCell id="t_users" value="users&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  username: VARCHAR(50) [UK]&#xa;  anonymous_name: VARCHAR(50)&#xa;  avatar_url: VARCHAR(255)&#xa;  bio: TEXT&#xa;  recovery_email: VARCHAR(100)&#xa;  recovery_token_hash: VARCHAR(64)&#xa;  password_hash: VARCHAR(255)&#xa;  role: ENUM('user','admin')&#xa;  status: ENUM('ACTIVE','SUSPENDED','DELETED')&#xa;  is_guest: BOOLEAN&#xa;  last_login_at: TIMESTAMP&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="1"><mxGeometry x="50" y="50" width="250" height="270" as="geometry" /></mxCell>
+
+    <mxCell id="t_posts" value="posts&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  user_id: VARCHAR(36) [FK]&#xa;  mood_tag: VARCHAR(30)&#xa;  content: TEXT&#xa;  is_private: BOOLEAN&#xa;  status: ENUM('PENDING','APPROVED','REJECTED')&#xa;  rejection_reason: VARCHAR(255)&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#EFF6FF;strokeColor=#2563EB;" vertex="1" parent="1"><mxGeometry x="400" y="50" width="250" height="210" as="geometry" /></mxCell>
+
+    <mxCell id="t_comments" value="comments&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  post_id: VARCHAR(36) [FK]&#xa;  parent_id: VARCHAR(36) [FK]&#xa;  user_id: VARCHAR(36) [FK]&#xa;  author_name: VARCHAR(50)&#xa;  content: TEXT&#xa;  is_ai_bot: BOOLEAN&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#EFF6FF;strokeColor=#2563EB;" vertex="1" parent="1"><mxGeometry x="750" y="50" width="230" height="190" as="geometry" /></mxCell>
+
+    <mxCell id="t_likes" value="post_likes&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  post_id: VARCHAR(36) [FK]&#xa;  user_id: VARCHAR(36) [FK]&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#F8FAFC;strokeColor=#475569;" vertex="1" parent="1"><mxGeometry x="400" y="310" width="180" height="110" as="geometry" /></mxCell>
+
+    <mxCell id="t_saved" value="saved_posts&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  post_id: VARCHAR(36) [FK]&#xa;  user_id: VARCHAR(36) [FK]&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#F8FAFC;strokeColor=#475569;" vertex="1" parent="1"><mxGeometry x="610" y="310" width="180" height="110" as="geometry" /></mxCell>
+
+    <mxCell id="t_reports" value="post_reports&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  post_id: VARCHAR(36) [FK]&#xa;  reporter_id: VARCHAR(36) [FK]&#xa;  reason: VARCHAR(255)&#xa;  details: TEXT&#xa;  status: ENUM('PENDING','REVIEWING','RESOLVED','REJECTED')&#xa;  resolved_by: VARCHAR(36)&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="1"><mxGeometry x="820" y="280" width="250" height="180" as="geometry" /></mxCell>
+
+    <mxCell id="t_ai_ses" value="ai_chat_sessions&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  user_id: VARCHAR(36) [FK]&#xa;  title: VARCHAR(100)&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#FEF3C7;strokeColor=#D97706;" vertex="1" parent="1"><mxGeometry x="50" y="380" width="220" height="120" as="geometry" /></mxCell>
+
+    <mxCell id="t_ai_msg" value="ai_chat_messages&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  session_id: VARCHAR(36) [FK]&#xa;  sender: ENUM('user','heli')&#xa;  content: TEXT&#xa;  emotion_detected: VARCHAR(50)&#xa;  topic_detected: VARCHAR(50)&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#FEF3C7;strokeColor=#D97706;" vertex="1" parent="1"><mxGeometry x="50" y="540" width="220" height="170" as="geometry" /></mxCell>
+
+    <mxCell id="t_safety" value="safety_shield_logs&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  user_id: VARCHAR(36) [FK]&#xa;  risk_level: ENUM('SAFE','WARNING','DANGER')&#xa;  emergency_alert: BOOLEAN&#xa;  flagged_issues: TEXT&#xa;  advice: TEXT&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="1"><mxGeometry x="340" y="470" width="250" height="160" as="geometry" /></mxCell>
+
+    <mxCell id="t_p2p" value="chat_sessions (Signaling)&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  peer_a_id: VARCHAR(36) [FK]&#xa;  peer_b_id: VARCHAR(36) [FK]&#xa;  topic: VARCHAR(50)&#xa;  status: ENUM('WAITING','CONNECTED','CLOSED')&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#EFF6FF;strokeColor=#2563EB;" vertex="1" parent="1"><mxGeometry x="630" y="470" width="250" height="150" as="geometry" /></mxCell>
+
+    <!-- Connectors -->
+    <mxCell id="re_u_p" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;strokeColor=#059669;strokeWidth=1.5;" edge="1" parent="1" source="t_users" target="t_posts"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_p_c" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=diamond;endFill=1;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="t_posts" target="t_comments"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_p_l" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=diamond;endFill=1;strokeColor=#475569;" edge="1" parent="1" source="t_posts" target="t_likes"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_p_s" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=diamond;endFill=1;strokeColor=#475569;" edge="1" parent="1" source="t_posts" target="t_saved"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_p_r" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;strokeColor=#DC2626;" edge="1" parent="1" source="t_posts" target="t_reports"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_u_ai" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;strokeColor=#D97706;" edge="1" parent="1" source="t_users" target="t_ai_ses"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_ai_m" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=diamond;endFill=1;strokeColor=#D97706;" edge="1" parent="1" source="t_ai_ses" target="t_ai_msg"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_u_safe" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;strokeColor=#DC2626;" edge="1" parent="1" source="t_users" target="t_safety"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="310" y="280" /><mxPoint x="310" y="520" /></Array></mxGeometry></mxCell>
+  </root>
+</mxGraphModel></diagram>
+  <diagram id="m_13" name="Hình 3.5 Class Diagram"><mxGraphModel dx="1420" dy="880" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- Class: User -->
+    <mxCell id="cls_user" value="User&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ username: String&#xa;+ anonymous_name: String&#xa;+ avatar_url: String&#xa;+ bio: String&#xa;+ recovery_email: String&#xa;+ recovery_token_hash: String&#xa;+ password_hash: String&#xa;+ role: Enum('user', 'admin')&#xa;+ status: Enum('ACTIVE', 'SUSPENDED', 'DELETED')&#xa;+ is_guest: Boolean&#xa;+ last_login_at: Timestamp&#xa;+ created_at: Timestamp&#xa;---------------------------------&#xa;+ register()&#xa;+ login()&#xa;+ recoverWithCode()&#xa;+ updateProfile()&#xa;+ regenerateCode()&#xa;+ changePassword()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ECFDF5;strokeColor=#059669;strokeWidth=2;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="50" y="80" width="240" height="340" as="geometry" />
+    </mxCell>
+
+    <!-- Class: Post -->
+    <mxCell id="cls_post" value="Post&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ user_id: String [FK]&#xa;+ mood_tag: String&#xa;+ content: Text&#xa;+ is_private: Boolean&#xa;+ status: Enum('PENDING', 'APPROVED', 'REJECTED')&#xa;+ rejection_reason: String&#xa;+ created_at: Timestamp&#xa;+ updated_at: Timestamp&#xa;---------------------------------&#xa;+ create()&#xa;+ update()&#xa;+ delete()&#xa;+ getApproved()&#xa;+ toggleLike()&#xa;+ toggleSave()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="420" y="80" width="250" height="270" as="geometry" />
+    </mxCell>
+
+    <!-- Class: Comment -->
+    <mxCell id="cls_comment" value="Comment&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ post_id: String [FK]&#xa;+ parent_id: String [FK, Nullable]&#xa;+ user_id: String [FK, Nullable]&#xa;+ author_name: String&#xa;+ content: Text&#xa;+ is_ai_bot: Boolean&#xa;+ created_at: Timestamp&#xa;---------------------------------&#xa;+ create()&#xa;+ delete()&#xa;+ getByPostId()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="780" y="80" width="240" height="230" as="geometry" />
+    </mxCell>
+
+    <!-- Class: PostLike -->
+    <mxCell id="cls_like" value="PostLike&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ post_id: String [FK]&#xa;+ user_id: String [FK]&#xa;+ created_at: Timestamp" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;strokeWidth=1.5;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="420" y="420" width="180" height="110" as="geometry" />
+    </mxCell>
+
+    <!-- Class: SavedPost -->
+    <mxCell id="cls_saved" value="SavedPost&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ post_id: String [FK]&#xa;+ user_id: String [FK]&#xa;+ created_at: Timestamp" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;strokeWidth=1.5;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="630" y="420" width="180" height="110" as="geometry" />
+    </mxCell>
+
+    <!-- Class: PostReport -->
+    <mxCell id="cls_report" value="PostReport&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ post_id: String [FK]&#xa;+ reporter_id: String [FK]&#xa;+ reason: String&#xa;+ details: Text&#xa;+ status: Enum('PENDING', 'RESOLVED', 'REJECTED')&#xa;+ resolved_by: String&#xa;+ created_at: Timestamp&#xa;---------------------------------&#xa;+ submitReport()&#xa;+ resolveReport()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="840" y="380" width="240" height="210" as="geometry" />
+    </mxCell>
+
+    <!-- Class: AIChatSession & AIChatMessage -->
+    <mxCell id="cls_ai_session" value="AIChatSession&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ user_id: String [FK]&#xa;+ title: String&#xa;+ created_at: Timestamp&#xa;+ updated_at: Timestamp&#xa;---------------------------------&#xa;+ createSession()&#xa;+ getHistory()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=2;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="50" y="520" width="240" height="170" as="geometry" />
+    </mxCell>
+
+    <mxCell id="cls_ai_message" value="AIChatMessage&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ session_id: String [FK]&#xa;+ sender: Enum('user', 'heli')&#xa;+ content: Text&#xa;+ emotion_detected: String&#xa;+ topic_detected: String&#xa;+ created_at: Timestamp" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="50" y="740" width="240" height="180" as="geometry" />
+    </mxCell>
+
+    <!-- Class: SafetyShieldLog -->
+    <mxCell id="cls_safety_log" value="SafetyShieldLog&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ user_id: String [FK]&#xa;+ risk_level: Enum('SAFE', 'WARNING', 'DANGER')&#xa;+ emergency_alert: Boolean&#xa;+ flagged_issues: JSON&#xa;+ advice: Text&#xa;+ created_at: Timestamp" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=2;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="340" y="660" width="260" height="170" as="geometry" />
+    </mxCell>
+
+    <!-- Class: ChatSession (P2P Signaling) -->
+    <mxCell id="cls_p2p" value="ChatSession (P2P WebRTC)&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ peer_a_id: String [FK]&#xa;+ peer_b_id: String [FK]&#xa;+ topic: String&#xa;+ status: Enum('WAITING', 'CONNECTED', 'CLOSED')&#xa;+ created_at: Timestamp" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="640" y="660" width="260" height="150" as="geometry" />
+    </mxCell>
+
+    <!-- Core Service: GeminiClient -->
+    <mxCell id="cls_gemini" value="&lt;&lt;Service&gt;&gt;&#xa;GeminiClient&#xa;---------------------------------&#xa;+ defaultModel: String&#xa;+ fallbackModel: String&#xa;---------------------------------&#xa;+ inspectContent(text)&#xa;+ chatHeliBuddy(messages)&#xa;+ analyzeSafetyRisk(messages)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=2;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="1150" y="220" width="240" height="170" as="geometry" />
+    </mxCell>
+
+    <!-- RELATIONSHIPS -->
+    <!-- User to Post (1 to N) -->
+    <mxCell id="rel_user_post" value="1          0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#059669;strokeWidth=1.5;" edge="1" parent="1" source="cls_user" target="cls_post">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Post to Comment (Composition: 1 to N) -->
+    <mxCell id="rel_post_comment" value="1          0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamond;endFill=1;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="cls_post" target="cls_comment">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Comment Self-Referencing (parent_id: 1 to N) -->
+    <mxCell id="rel_comment_self" value="parent_id&#xa;0..1        0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="cls_comment" target="cls_comment">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1050" y="110" />
+          <mxPoint x="1050" y="240" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Post to PostLike (1 to N) -->
+    <mxCell id="rel_post_like" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamond;endFill=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="cls_post" target="cls_like">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Post to SavedPost (1 to N) -->
+    <mxCell id="rel_post_saved" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamond;endFill=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="cls_post" target="cls_saved">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Post to PostReport (1 to N) -->
+    <mxCell id="rel_post_report" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="1" source="cls_post" target="cls_report">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- User to AIChatSession (1 to N) -->
+    <mxCell id="rel_user_ai" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="1" source="cls_user" target="cls_ai_session">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- AIChatSession to AIChatMessage (Composition: 1 to N) -->
+    <mxCell id="rel_ai_session_msg" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamond;endFill=1;strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="1" source="cls_ai_session" target="cls_ai_message">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- User to SafetyShieldLog (1 to N) -->
+    <mxCell id="rel_user_safety" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="1" source="cls_user" target="cls_safety_log">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="320" y="280" />
+          <mxPoint x="320" y="720" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Post to GeminiClient (Dependency) -->
+    <mxCell id="rel_post_gemini" value="&lt;&lt;uses&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endSize=8;strokeColor=#CA8A04;strokeWidth=1.5;" edge="1" parent="1" source="cls_post" target="cls_gemini">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="545" y="40" />
+          <mxPoint x="1270" y="40" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- AIChatSession to GeminiClient (Dependency) -->
+    <mxCell id="rel_ai_gemini" value="&lt;&lt;uses&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endSize=8;strokeColor=#CA8A04;strokeWidth=1.5;" edge="1" parent="1" source="cls_ai_session" target="cls_gemini">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="200" y="960" />
+          <mxPoint x="1270" y="960" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- SafetyShieldLog to GeminiClient (Dependency) -->
+    <mxCell id="rel_safety_gemini" value="&lt;&lt;uses&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endSize=8;strokeColor=#CA8A04;strokeWidth=1.5;" edge="1" parent="1" source="cls_safety_log" target="cls_gemini">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="470" y="900" />
+          <mxPoint x="1220" y="900" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+  </root>
+</mxGraphModel></diagram>
+</mxfile>

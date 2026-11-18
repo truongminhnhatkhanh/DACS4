@@ -1,0 +1,888 @@
+{
+  "users": [
+    {
+      "id": "admin-master-id",
+      "username": "admin",
+      "anonymous_name": "Quản trị viên (Admin)",
+      "avatar_url": "🌸",
+      "bio": "",
+      "recovery_email": "admin@heli.vku.udn.vn",
+      "recovery_token_hash": "a4bf063a6c97b4dc1dbc705e31d2818b960b59e0ed78e4bbcf2b88e2dab893c4",
+      "recovery_code_hash": null,
+      "password_hash": "$2a$10$P20Viohy4e.F/jTZfJE5J.yEaB/LHq2R4y8h4Hb5wzEcPGPflI6Xe",
+      "role": "admin",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-16T00:03:41.549Z",
+      "created_at": "2026-10-17T01:03:41.549Z"
+    },
+    {
+      "id": "demo-user-id-01",
+      "username": "demouser",
+      "anonymous_name": "Ánh Trăng",
+      "avatar_url": "/images/avatars/avatar_moon.svg",
+      "bio": "Thích ngắm trăng khuya và nghe nhạc lofi khi viết code.",
+      "recovery_email": "user@heli.vku.udn.vn",
+      "recovery_token_hash": "b9e0c6362c80db6e0c227fe9fa6f3337840225b6b98fcd93db110309212848d8",
+      "recovery_code_hash": null,
+      "password_hash": "$2a$10$3H6wHvzjp.3.tpjr86oR0OZ9rGrZOihKAYGMFYy0E5jXi.tkHqCrq",
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-15T23:03:41.549Z",
+      "created_at": "2026-10-27T01:03:41.549Z"
+    },
+    {
+      "id": "user-hoami",
+      "username": "hoami_trang",
+      "anonymous_name": "Họa Mi Trắng",
+      "avatar_url": "/images/avatars/avatar_bird.svg",
+      "bio": "Học tập để trưởng thành, sống để yêu thương và thấu hiểu.",
+      "recovery_email": null,
+      "recovery_token_hash": "e720e30fa76d29b1ae597e091c4cd0775b531b7614bb9497878cf0bcacbb1485",
+      "recovery_code_hash": null,
+      "password_hash": "$2a$10$S1vVkjVG5YK/AU10E/ueyOdzH1gEj/FCn3rSKg1I7qY0No0PCPSZu",
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-15T22:03:41.549Z",
+      "created_at": "2026-10-29T01:03:41.549Z"
+    },
+    {
+      "id": "user-maymuathu",
+      "username": "may_muathu",
+      "anonymous_name": "Mây Mùa Thu",
+      "avatar_url": "🌸",
+      "bio": "Đôi khi chỉ muốn một góc nhỏ bình yên giữa thành phố nhộn nhịp.",
+      "recovery_email": null,
+      "recovery_token_hash": "932dfe9176c251b1c2d72ec5e1487318b7257c87f0c2b8d677ccdcd778adca69",
+      "recovery_code_hash": null,
+      "password_hash": "$2a$10$pNCoaqyrDjfwjZmSz5rwl.Arw0O1.lBAc4CXXAdcRHZs7bWnjygX6",
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-15T20:03:41.549Z",
+      "created_at": "2026-11-01T01:03:41.549Z"
+    },
+    {
+      "id": "user-giodem",
+      "username": "gio_dem",
+      "anonymous_name": "Gió Đêm",
+      "avatar_url": "/images/avatars/avatar_fox.svg",
+      "bio": "Lắng nghe thanh âm dịu dàng của màn đêm.",
+      "recovery_email": null,
+      "recovery_token_hash": "4e383fef9a62f14c7ff41474f21775c85aba72c33264206595585f9f03a70551",
+      "recovery_code_hash": null,
+      "password_hash": "$2a$10$FtckXgrwSjkhcP6t2gEt0OzgZd.wlNVhowQZ5Ehrrn0sf4j21Loo2",
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-15T18:03:41.549Z",
+      "created_at": "2026-11-02T01:03:41.549Z"
+    },
+    {
+      "id": "user-caphemuoi",
+      "username": "caphe_muoi",
+      "anonymous_name": "Cà Phê Muối",
+      "avatar_url": "/images/avatars/avatar_coffee.svg",
+      "bio": "Một chút đắng, một chút mặn, trọn vẹn hương vị cuộc đời.",
+      "recovery_email": null,
+      "recovery_token_hash": "c928e712d9d246d9b79cb49d16819784da638b3d48b851da594bef806f5fc936",
+      "recovery_code_hash": null,
+      "password_hash": "$2a$10$XySIyKZP6Y9OhFTy9WWDxuf8MqQB5xWlSQACIh3HXfFpWrEtcDUN2",
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-15T15:03:41.549Z",
+      "created_at": "2026-11-04T01:03:41.549Z"
+    },
+    {
+      "id": "user-caovoi52",
+      "username": "caovoi_52hz",
+      "anonymous_name": "Cá Voi 52Hz",
+      "avatar_url": "/images/avatars/avatar_whale.svg",
+      "bio": "Tìm kiếm tần số đồng điệu giữa đại dương bao la.",
+      "recovery_email": null,
+      "recovery_token_hash": "75cf308e3893620d84f73f5864202ec45f33173770b8b6e280ff6b978d569e7a",
+      "recovery_code_hash": null,
+      "password_hash": "$2a$10$v16feEjNsTByT0BvBAudJOJfPtNlWYnETKRik08dEUqbffDf9VxVm",
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-15T13:03:41.549Z",
+      "created_at": "2026-11-06T01:03:41.549Z"
+    },
+    {
+      "id": "user-nangam",
+      "username": "nang_am",
+      "anonymous_name": "Nắng Ấm",
+      "avatar_url": "/images/avatars/avatar_plant.svg",
+      "bio": "Sau cơn mưa trời lại sáng. Luôn giữ niềm tin vào ngày mai.",
+      "recovery_email": null,
+      "recovery_token_hash": "6f7b8dd30a4f1f4899f8efcfb4347b3455371455437cdb9e1081df0215f57397",
+      "recovery_code_hash": null,
+      "password_hash": "$2a$10$ZV3948GTOSdLAeZeXUJl0.ZfNAknCox9KNmHAfvOu3wJqTi2Qii/i",
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-15T11:03:41.549Z",
+      "created_at": "2026-11-08T01:03:41.549Z"
+    },
+    {
+      "id": "user-saobang",
+      "username": "saobang_nho",
+      "anonymous_name": "Sao Băng Nhỏ",
+      "avatar_url": "/images/avatars/avatar_star.svg",
+      "bio": "Ước mong những điều tốt đẹp nhất sẽ đến với tất cả các bạn.",
+      "recovery_email": null,
+      "recovery_token_hash": "d3d81ab837c9a23ffbd4694069febbdc3da70031bf3191a9f7e8c46665b49ea8",
+      "recovery_code_hash": null,
+      "password_hash": "$2a$10$So/IU3rrBw/jCRtTyIpHEe7Do1POHkFVGxW3rmEMcYjAFjNHm3nVK",
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-15T09:03:41.549Z",
+      "created_at": "2026-11-09T01:03:41.549Z"
+    },
+    {
+      "id": "user-meocam",
+      "username": "meo_cam",
+      "anonymous_name": "Mèo Cam Ngủ Ngày",
+      "avatar_url": "/images/avatars/avatar_cat.svg",
+      "bio": "Cuộc sống bận rộn quá, cho mình chợp mắt 5 phút nhé.",
+      "recovery_email": null,
+      "recovery_token_hash": "6c7b986c77574cca62e7f7d3a52ba6c451fc10d1fcfd2c8594ac49fe4fbe24c3",
+      "recovery_code_hash": null,
+      "password_hash": "$2a$10$PiA9unKOCjcWLBl75AvZyeookQ232xTvyDA0qwtrtSXlR3K5SBcZi",
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-15T07:03:41.549Z",
+      "created_at": "2026-11-11T01:03:41.549Z"
+    },
+    {
+      "id": "user-sinhvienit",
+      "username": "sinhvien_it2026",
+      "anonymous_name": "Sinh Viên Năm Cuối",
+      "avatar_url": "💻",
+      "bio": "Đang chiến đấu cùng Đồ án tốt nghiệp DACS4... Cố lên tôi ơi!",
+      "recovery_email": null,
+      "recovery_token_hash": "941aa2e4327389ed175be7f511c7f6145c5838d6ebe50853a030138a5a3ead50",
+      "recovery_code_hash": null,
+      "password_hash": "$2a$10$mr9AzkqcFH8fIqURkwPMx.M9OEAwWqzeppy/dNuBWxs8b4CncYAhK",
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-16T00:03:41.549Z",
+      "created_at": "2026-11-12T01:03:41.549Z"
+    },
+    {
+      "id": "user-bad-actor",
+      "username": "spammer_99",
+      "anonymous_name": "Tài Khoản Đã Khóa",
+      "avatar_url": "⚠️",
+      "bio": "Tài khoản vi phạm quy chuẩn cộng đồng.",
+      "recovery_email": null,
+      "recovery_token_hash": null,
+      "recovery_code_hash": null,
+      "password_hash": "$2a$10$yl9SagP2wKgKxKzKY7GvQu5mQccC2ddSuRBGvtJPk3N0.Ix/gNWjy",
+      "role": "user",
+      "status": "SUSPENDED",
+      "is_guest": false,
+      "last_login_at": "2026-11-13T01:03:41.549Z",
+      "created_at": "2026-11-10T01:03:41.549Z"
+    },
+    {
+      "id": "user_p2_author_1794791056277",
+      "username": null,
+      "anonymous_name": "Author_P2",
+      "avatar_url": null,
+      "bio": null,
+      "recovery_email": null,
+      "recovery_token_hash": null,
+      "recovery_code_hash": null,
+      "password_hash": null,
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-16T01:04:16.278Z",
+      "created_at": "2026-11-16T01:04:16.278Z"
+    },
+    {
+      "id": "user_p2_reader_1794791056285",
+      "username": null,
+      "anonymous_name": "Reader_P2",
+      "avatar_url": null,
+      "bio": null,
+      "recovery_email": null,
+      "recovery_token_hash": null,
+      "recovery_code_hash": null,
+      "password_hash": null,
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-16T01:04:16.285Z",
+      "created_at": "2026-11-16T01:04:16.285Z"
+    },
+    {
+      "id": "user_p2_admin_1794791056290",
+      "username": null,
+      "anonymous_name": "Admin_P2",
+      "avatar_url": null,
+      "bio": null,
+      "recovery_email": null,
+      "recovery_token_hash": null,
+      "recovery_code_hash": null,
+      "password_hash": null,
+      "role": "admin",
+      "status": "ACTIVE",
+      "is_guest": false,
+      "last_login_at": "2026-11-16T01:04:16.290Z",
+      "created_at": "2026-11-16T01:04:16.290Z"
+    },
+    {
+      "id": "139ba090-21a7-4d65-b914-a8f5dd422114",
+      "username": null,
+      "anonymous_name": "Anonymous_6110",
+      "avatar_url": null,
+      "bio": null,
+      "recovery_email": null,
+      "recovery_token_hash": "bd697477025a13fb5d9f0191f1dfd087397bd55085a033d854f11b6185e158b7",
+      "recovery_code_hash": null,
+      "password_hash": null,
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": true,
+      "last_login_at": "2026-11-16T01:09:57.794Z",
+      "created_at": "2026-11-16T01:09:57.794Z"
+    },
+    {
+      "id": "e2ac74f9-e557-4dbf-a55c-f8db99158211",
+      "username": null,
+      "anonymous_name": "Anonymous_9353",
+      "avatar_url": null,
+      "bio": null,
+      "recovery_email": null,
+      "recovery_token_hash": "6aa30ec4aecafe3843c13eb97b05f8e268e2cec681368efabbe3b81341e16b0d",
+      "recovery_code_hash": null,
+      "password_hash": null,
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": true,
+      "last_login_at": "2026-11-16T01:09:57.825Z",
+      "created_at": "2026-11-16T01:09:57.825Z"
+    },
+    {
+      "id": "8f0e6506-30ad-4e75-be00-e52d11ea2334",
+      "username": null,
+      "anonymous_name": "Anonymous_2568",
+      "avatar_url": null,
+      "bio": null,
+      "recovery_email": null,
+      "recovery_token_hash": "744ce4304b6f827d3ca1a5414a404d477715ab95408dc9ced283e47651a51b74",
+      "recovery_code_hash": null,
+      "password_hash": null,
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": true,
+      "last_login_at": "2026-11-16T07:19:33.364Z",
+      "created_at": "2026-11-16T07:19:33.364Z"
+    },
+    {
+      "id": "54b82776-48ee-4cd6-8c48-d6fbbc7d6222",
+      "username": null,
+      "anonymous_name": "Anonymous_2277",
+      "avatar_url": null,
+      "bio": null,
+      "recovery_email": null,
+      "recovery_token_hash": "d7998cac7a7aea230180872203f1bd7559e7532b9d23298a81f6877e3b76c07d",
+      "recovery_code_hash": null,
+      "password_hash": null,
+      "role": "user",
+      "status": "ACTIVE",
+      "is_guest": true,
+      "last_login_at": "2026-11-16T07:20:02.019Z",
+      "created_at": "2026-11-16T07:20:02.019Z"
+    }
+  ],
+  "posts": [
+    {
+      "id": "post_search_1794791056314",
+      "user_id": "user_p2_author_1794791056277",
+      "mood_tag": "Áp lực",
+      "content": "Mình đang rất lo lắng về KY_THI_TOT_NGHIEP_2026_1794791056314 sắp diễn ra.",
+      "image_url": null,
+      "is_private": false,
+      "status": "APPROVED",
+      "rejection_reason": null,
+      "created_at": "2026-11-16T01:04:16.314Z",
+      "updated_at": "2026-11-16T01:04:16.314Z"
+    },
+    {
+      "id": "post_private_1794791056300",
+      "user_id": "user_p2_author_1794791056277",
+      "mood_tag": "Cô đơn",
+      "content": "Nhật ký thầm kín chỉ mình tôi xem được.",
+      "image_url": null,
+      "is_private": true,
+      "status": "APPROVED",
+      "rejection_reason": null,
+      "created_at": "2026-11-16T01:04:16.300Z",
+      "updated_at": "2026-11-16T01:04:16.300Z"
+    },
+    {
+      "id": "post_public_1794791056295",
+      "user_id": "user_p2_author_1794791056277",
+      "mood_tag": "Biết ơn",
+      "content": "Tâm sự công khai đã được cập nhật nội dung mới.",
+      "image_url": null,
+      "is_private": false,
+      "status": "APPROVED",
+      "rejection_reason": null,
+      "created_at": "2026-11-16T01:04:16.296Z",
+      "updated_at": "2026-11-16T01:04:16.330Z"
+    },
+    {
+      "id": "post-study-01",
+      "user_id": "user-sinhvienit",
+      "mood_tag": "Áp lực",
+      "image_url": "/images/posts/study_desk.svg",
+      "content": "Chỉ còn 3 tuần nữa là đến ngày bảo vệ đồ án tốt nghiệp DACS4 rồi. Mấy hôm nay thức trắng đêm fix bug, vẽ lại các sơ đồ UML và viết tài liệu báo cáo mà người mệt lử. Nhiều lúc muốn buông xuôi ghê, nhưng nghĩ lại công sức 4 năm đại học của bản thân và sự kỳ vọng của bố mẹ lại tự nhủ phải cố gắng thêm một chút nữa.\n\nỞ đây có bạn nào cũng đang làm đồ án tốt nghiệp như mình không, chia sẻ cho mình chút động lực với...",
+      "is_private": false,
+      "status": "APPROVED",
+      "rejection_reason": null,
+      "created_at": "2026-11-15T23:03:41.549Z",
+      "updated_at": "2026-11-15T23:03:41.549Z"
+    },
+    {
+      "id": "post-rain-02",
+      "user_id": "user-caovoi52",
+      "mood_tag": "Cô đơn",
+      "image_url": "/images/posts/rain_night.svg",
+      "content": "Đà Nẵng hôm nay mưa rả rích từ chiều đến tối muộn. Ngồi trong căn phòng trọ 15m2 ăn vội bát mì tôm tự nhiên thấy nhớ nhà đến quặn lòng. Nhớ nồi canh chua cá lóc mẹ nấu, nhớ tiếng ba gọi thức dậy mỗi sớm mai.\n\nRời quê lên thành phố học tập và tự lập mới thấy làm người lớn cô đơn hơn mình tưởng rất nhiều...",
+      "is_private": false,
+      "status": "APPROVED",
+      "rejection_reason": null,
+      "created_at": "2026-11-15T20:03:41.549Z",
+      "updated_at": "2026-11-15T20:03:41.549Z"
+    },
+    {
+      "id": "post-sunset-03",
+      "user_id": "user-giodem",
+      "mood_tag": "Lạc lối",
+      "image_url": "/images/posts/sunset_bridge.svg",
+      "content": "22 tuổi, bạn bè xung quanh người thì có việc làm lương ngàn đô, người thì chuẩn bị đi du học. Nhìn lại bản thân vẫn chênh vênh chưa biết mình thực sự thích gì và muốn trở thành ai. Cảm giác bị tụt lại phía sau (FOMO) thật sự rất ngột ngạt.\n\nChiều nay đứng trên cầu ngắm hoàng hôn sông Hàn, tự hỏi con đường phía trước của mình sẽ đi về đâu...",
+      "is_private": false,
+      "status": "APPROVED",
+      "rejection_reason": null,
+      "created_at": "2026-11-15T17:03:41.549Z",
+      "updated_at": "2026-11-15T17:03:41.549Z"
+    },
+    {
+      "id": "post-sunflower-04",
+      "user_id": "user-nangam",
+      "mood_tag": "Hy vọng",
+      "image_url": "/images/posts/sunflower.svg",
+      "content": "Sau hơn 6 tháng vật lộn với chứng rối loạn lo âu và những cơn hoảng loạn (panic attacks), hôm nay là ngày đầu tiên mình có thể tự tin bước ra ngoài công viên, ngắm những đóa hoa hướng dương và hít thở thật sâu mà không thấy lồng ngực bị thắt nghẹn.\n\nMình nhận ra rằng vết thương nào rồi cũng sẽ lành, chỉ cần chúng ta học cách kiên nhẫn và bao dung hơn với chính mình. Gửi năng lượng tích cực đến tất cả những ai đang cố gắng vượt qua giai đoạn khó khăn! 🌻",
+      "is_private": false,
+      "status": "APPROVED",
+      "rejection_reason": null,
+      "created_at": "2026-11-15T13:03:41.549Z",
+      "updated_at": "2026-11-15T13:03:41.549Z"
+    },
+    {
+      "id": "post-coffee-05",
+      "user_id": "user-hoami",
+      "mood_tag": "Biết ơn",
+      "image_url": "/images/posts/coffee_quiet.svg",
+      "content": "Sáng nay đi xe buýt bị rơi ví tiền có toàn bộ thẻ sinh viên và căn cước công dân. Tưởng chừng mất hết hy vọng thì chiều nay nhận được cuộc gọi từ bác tài xế hẹn ra trạm nhận lại nguyên vẹn.\n\nBác còn từ chối nhận tiền cảm ơn và nói: 'Sinh viên đi học xa nhà khó khăn, giữ lấy mà ăn uống con ạ'. Cuộc đời này vẫn còn nhiều điều tử tế và ấm áp đến lạ kỳ! Cảm ơn bác tài rất nhiều.",
+      "is_private": false,
+      "status": "APPROVED",
+      "rejection_reason": null,
+      "created_at": "2026-11-15T01:03:41.549Z",
+      "updated_at": "2026-11-15T01:03:41.549Z"
+    },
+    {
+      "id": "post-room-06",
+      "user_id": "user-maymuathu",
+      "mood_tag": "Buồn bã",
+      "image_url": "/images/posts/cozy_room.svg",
+      "content": "Tụi mình đã bên nhau 4 năm, từ những ngày sinh viên nghèo đạp xe cọc cạch đi ăn ốc vỉa hè đến lúc cả hai đều có công việc ổn định. Vậy mà cuối cùng lại dừng lại chỉ vì 'không còn cùng chung mục tiêu tương lai'.\n\nHóa ra trưởng thành cũng đồng nghĩa với việc học cách buông tay những người mình từng xem là cả bầu trời... Đêm nay góc phòng nhỏ bỗng trở nên trống trải lạ thường.",
+      "is_private": false,
+      "status": "APPROVED",
+      "rejection_reason": null,
+      "created_at": "2026-11-14T13:03:41.549Z",
+      "updated_at": "2026-11-14T13:03:41.549Z"
+    },
+    {
+      "id": "post-private-07",
+      "user_id": "demo-user-id-01",
+      "mood_tag": "Cô đơn",
+      "image_url": "/images/posts/starry_sky.svg",
+      "content": "[Nhật ký riêng tư - Chỉ mình tôi]\nĐêm nay ngắm bầu trời sao qua khung cửa sổ, tự hứa với bản thân sẽ không bao giờ để những lời phán xét hay nhận xét ác ý của người khác làm lung lay giá trị của mình nữa. Mình là phiên bản độc nhất vô nhị. Cố gắng hết sức hoàn thành kỳ thực tập và đạt mục tiêu học bổng thạc sĩ!",
+      "is_private": true,
+      "status": "APPROVED",
+      "rejection_reason": null,
+      "created_at": "2026-11-14T01:03:41.549Z",
+      "updated_at": "2026-11-14T01:03:41.549Z"
+    },
+    {
+      "id": "post-rejected-hate",
+      "user_id": "user-bad-actor",
+      "mood_tag": "Tuyệt vọng",
+      "image_url": null,
+      "content": "Bọn mày chết hết đi, tao ghét tất cả chúng mày! Cuộc đời này quá bất công, tao muốn trả thù và hủy hoại tất cả!",
+      "is_private": false,
+      "status": "REJECTED",
+      "rejection_reason": "Nội dung chứa ngôn từ bạo lực, thù ghét hoặc kích động tiêu cực vi phạm tiêu chuẩn cộng đồng an toàn.",
+      "created_at": "2026-11-13T01:03:41.549Z",
+      "updated_at": "2026-11-13T01:03:41.549Z"
+    },
+    {
+      "id": "post-rejected-scam",
+      "user_id": "user-bad-actor",
+      "mood_tag": "Lạc lối",
+      "image_url": null,
+      "content": "Tuyển gấp 5 bạn nam/nữ làm việc online nhẹ nhàng tại khu kinh tế Mộc Bài, thu nhập 35-50 triệu/tháng không cần bằng cấp hay kinh nghiệm, bao ăn ở trọn gói qua biên giới, liên hệ Zalo 0987xxx để đi ngay trong đêm!",
+      "is_private": false,
+      "status": "REJECTED",
+      "rejection_reason": "AI Safety Shield phát hiện dấu hiệu lừa đảo bẫy việc làm xuyên biên giới hoặc buôn bán người. Đã kích hoạt cảnh báo an toàn.",
+      "created_at": "2026-11-12T13:03:41.549Z",
+      "updated_at": "2026-11-12T13:03:41.549Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "c-study-ai",
+      "post_id": "post-study-01",
+      "user_id": null,
+      "parent_id": null,
+      "author_name": "Heli AI Buddy",
+      "content": "Gửi bạn một cái ôm thật ấm áp! 4 năm đại học là một hành trình dài đầy kiên cường. Việc bạn cảm thấy mệt mỏi và kiệt sức là tín hiệu hoàn toàn tự nhiên khi não bộ phải xử lý khối lượng tư duy liên tục. Hãy nhớ quy tắc 20-20-20: sau mỗi 20 phút nhìn màn hình, hãy nhìn ra xa 20 feet trong 20 giây và uống một ngụm nước ấm nhé. Bạn đã đi được 90% chặng đường rồi, đích đến ngay trước mắt thôi!",
+      "is_ai_bot": true,
+      "created_at": "2026-11-15T23:09:41.549Z"
+    },
+    {
+      "id": "c-study-01",
+      "post_id": "post-study-01",
+      "user_id": "user-hoami",
+      "parent_id": null,
+      "author_name": "Họa Mi Trắng",
+      "content": "Cố lên bạn ơi! Năm ngoái mình bảo vệ đồ án tốt nghiệp DACS cũng căng thẳng đến phát khóc. Nhưng ngày cầm tấm bằng tốt nghiệp trên tay thì thấy mọi vất vả đều xứng đáng. Bạn hãy chia nhỏ đồ án thành các checklist nhỏ làm từng bước một nhé!",
+      "is_ai_bot": false,
+      "created_at": "2026-11-15T23:21:41.549Z"
+    },
+    {
+      "id": "c-study-01-reply",
+      "post_id": "post-study-01",
+      "user_id": "user-sinhvienit",
+      "parent_id": "c-study-01",
+      "author_name": "Sinh Viên Năm Cuối",
+      "content": "Cảm ơn bạn nhiều nha, đọc được bình luận của bạn mình thấy nhẹ nhõm và có thêm động lực hẳn.",
+      "is_ai_bot": false,
+      "created_at": "2026-11-15T23:33:41.549Z"
+    },
+    {
+      "id": "c-study-02",
+      "post_id": "post-study-01",
+      "user_id": "user-caphemuoi",
+      "parent_id": null,
+      "author_name": "Cà Phê Muối",
+      "content": "Gửi bạn một ly cà phê tinh thần ☕. Nhớ ngủ đủ ít nhất 6 tiếng nhé, thức trắng đêm sẽ làm giảm khả năng tư duy logic và dễ sinh bug hơn đấy!",
+      "is_ai_bot": false,
+      "created_at": "2026-11-15T23:51:41.549Z"
+    },
+    {
+      "id": "c-rain-ai",
+      "post_id": "post-rain-02",
+      "user_id": null,
+      "parent_id": null,
+      "author_name": "Heli AI Buddy",
+      "content": "Nỗi nhớ nhà trong những chiều mưa là một thứ cảm xúc rất dịu dàng và chân thật. Bạn không hề cô độc đâu, hàng ngàn bạn trẻ ngoài kia cũng đang có cùng nỗi niềm ấy. Nếu có thể, hãy nhấc máy gọi điện về hỏi thăm mẹ một vài câu nhé, nghe giọng người thân sẽ giúp trái tim bạn ấm áp hơn rất nhiều.",
+      "is_ai_bot": true,
+      "created_at": "2026-11-15T20:15:41.549Z"
+    },
+    {
+      "id": "c-rain-01",
+      "post_id": "post-rain-02",
+      "user_id": "user-maymuathu",
+      "parent_id": null,
+      "author_name": "Mây Mùa Thu",
+      "content": "Đồng cảm với bạn sâu sắc. Lúc mới từ quê lên Đà Nẵng học, mỗi lần trời mưa là mình lại trốn trong chăn khóc vì nhớ nhà. Cố lên nhé bạn, gia đình luôn là hậu phương yêu thương chúng ta nhất.",
+      "is_ai_bot": false,
+      "created_at": "2026-11-15T20:33:41.549Z"
+    },
+    {
+      "id": "c-rain-02",
+      "post_id": "post-rain-02",
+      "user_id": "user-nangam",
+      "parent_id": null,
+      "author_name": "Nắng Ấm",
+      "content": "Trời lạnh nhớ mặc ấm nha bạn. Bát mì tôm thêm quả trứng và ít hành nữa cho ấm bụng nhé. Tự lập vất vả nhưng sẽ tôi luyện cho bạn bản lĩnh vững vàng lắm đấy!",
+      "is_ai_bot": false,
+      "created_at": "2026-11-15T21:03:41.549Z"
+    },
+    {
+      "id": "c-sunset-ai",
+      "post_id": "post-sunset-03",
+      "user_id": null,
+      "parent_id": null,
+      "author_name": "Heli AI Buddy",
+      "content": "Bạn không hề thất bại! Mỗi bông hoa đều có mùa nở rộ của riêng nó. So sánh timeline của mình với người khác chỉ khiến bạn bỏ quên những bước tiến nhỏ nhưng quý giá của chính mình. Hãy cho phép bản thân được bối rối, vì bối rối chính là khởi đầu của sự tìm kiếm và thấu hiểu bản thân sâu sắc hơn.",
+      "is_ai_bot": true,
+      "created_at": "2026-11-15T17:15:41.549Z"
+    },
+    {
+      "id": "c-sunset-01",
+      "post_id": "post-sunset-03",
+      "user_id": "user-saobang",
+      "parent_id": null,
+      "author_name": "Sao Băng Nhỏ",
+      "content": "Đừng tự tạo áp lực so sánh bạn ơi. Ai trên mạng xã hội cũng chỉ khoe mặt hào nhoáng nhất thôi, không ai chụp lại những lúc họ thất bại hay rơi nước mắt đâu. Đi chậm một chút cũng được, miễn là mình không dừng lại.",
+      "is_ai_bot": false,
+      "created_at": "2026-11-15T17:51:41.549Z"
+    },
+    {
+      "id": "c-sunset-01-reply",
+      "post_id": "post-sunset-03",
+      "user_id": "user-giodem",
+      "parent_id": "c-sunset-01",
+      "author_name": "Gió Đêm",
+      "content": "Cảm ơn bạn, lời khuyên của bạn đến rất đúng lúc mình cần nhất.",
+      "is_ai_bot": false,
+      "created_at": "2026-11-15T18:15:41.549Z"
+    },
+    {
+      "id": "c-sunflower-ai",
+      "post_id": "post-sunflower-04",
+      "user_id": null,
+      "parent_id": null,
+      "author_name": "Heli AI Buddy",
+      "content": "Thật xúc động và tự hào khi đọc những dòng này của bạn! Bạn đã rất dũng cảm trên hành trình tự chữa lành. Hãy tiếp tục trân trọng từng khoảnh khắc bình yên nhỏ bé này nhé! 🌻",
+      "is_ai_bot": true,
+      "created_at": "2026-11-15T13:15:41.549Z"
+    },
+    {
+      "id": "c-sunflower-01",
+      "post_id": "post-sunflower-04",
+      "user_id": "demo-user-id-01",
+      "parent_id": null,
+      "author_name": "Ánh Trăng",
+      "content": "Chúc mừng bạn! Năng lượng tích cực từ bài viết của bạn đã truyền cảm hứng cho mình rất nhiều trong ngày hôm nay.",
+      "is_ai_bot": false,
+      "created_at": "2026-11-15T13:51:41.549Z"
+    },
+    {
+      "id": "c-sunflower-02",
+      "post_id": "post-sunflower-04",
+      "user_id": "user-meocam",
+      "parent_id": null,
+      "author_name": "Mèo Cam Ngủ Ngày",
+      "content": "Tự hào về bạn quá! Tiếp tục lan tỏa năng lượng tuyệt vời này đến cộng đồng Heli nhé!",
+      "is_ai_bot": false,
+      "created_at": "2026-11-15T14:33:41.549Z"
+    },
+    {
+      "id": "c-coffee-ai",
+      "post_id": "post-coffee-05",
+      "user_id": null,
+      "parent_id": null,
+      "author_name": "Heli AI Buddy",
+      "content": "Những câu chuyện tử tế đời thường như vậy luôn sưởi ấm tâm hồn chúng ta. Cảm ơn bạn đã chia sẻ để cộng đồng Heli cùng cảm nhận được sự ấm áp và niềm tin vào cuộc sống!",
+      "is_ai_bot": true,
+      "created_at": "2026-11-15T03:27:41.549Z"
+    },
+    {
+      "id": "c-coffee-01",
+      "post_id": "post-coffee-05",
+      "user_id": "user-caphemuoi",
+      "parent_id": null,
+      "author_name": "Cà Phê Muối",
+      "content": "Đọc xong thấy ấm lòng ghê. Chúc bác tài xế luôn mạnh khỏe và vạn dặm bình an trên những nẻo đường.",
+      "is_ai_bot": false,
+      "created_at": "2026-11-15T05:51:41.549Z"
+    },
+    {
+      "id": "c-room-ai",
+      "post_id": "post-room-06",
+      "user_id": null,
+      "parent_id": null,
+      "author_name": "Heli AI Buddy",
+      "content": "Chia tay một người đã gắn bó 4 năm thanh xuân là một nỗi đau không dễ gì nguôi ngoai. Bạn hãy cho phép bản thân được buồn, được khóc nếu muốn. Đừng vội kìm nén. Kết thúc một chặng đường không phủ nhận những kỷ niệm đẹp hai bạn đã từng có cùng nhau.",
+      "is_ai_bot": true,
+      "created_at": "2026-11-14T15:27:41.549Z"
+    },
+    {
+      "id": "c-room-01",
+      "post_id": "post-room-06",
+      "user_id": "user-caovoi52",
+      "parent_id": null,
+      "author_name": "Cá Voi 52Hz",
+      "content": "Thương bạn. Thời gian sẽ là liều thuốc xoa dịu tốt nhất. Hãy dành thời gian này để chăm sóc và yêu thương bản thân nhiều hơn nhé.",
+      "is_ai_bot": false,
+      "created_at": "2026-11-14T17:51:41.549Z"
+    }
+  ],
+  "post_likes": [
+    {
+      "id": "like-1",
+      "post_id": "post-study-01",
+      "user_id": "demo-user-id-01",
+      "created_at": "2026-11-15T23:15:41.549Z"
+    },
+    {
+      "id": "like-2",
+      "post_id": "post-study-01",
+      "user_id": "user-hoami",
+      "created_at": "2026-11-15T23:27:41.549Z"
+    },
+    {
+      "id": "like-3",
+      "post_id": "post-study-01",
+      "user_id": "user-caphemuoi",
+      "created_at": "2026-11-15T23:39:41.549Z"
+    },
+    {
+      "id": "like-4",
+      "post_id": "post-study-01",
+      "user_id": "user-nangam",
+      "created_at": "2026-11-15T23:57:41.549Z"
+    },
+    {
+      "id": "like-5",
+      "post_id": "post-rain-02",
+      "user_id": "demo-user-id-01",
+      "created_at": "2026-11-15T20:27:41.549Z"
+    },
+    {
+      "id": "like-6",
+      "post_id": "post-rain-02",
+      "user_id": "user-maymuathu",
+      "created_at": "2026-11-15T20:39:41.549Z"
+    },
+    {
+      "id": "like-7",
+      "post_id": "post-rain-02",
+      "user_id": "user-saobang",
+      "created_at": "2026-11-15T21:09:41.549Z"
+    },
+    {
+      "id": "like-8",
+      "post_id": "post-sunset-03",
+      "user_id": "user-hoami",
+      "created_at": "2026-11-15T17:33:41.549Z"
+    },
+    {
+      "id": "like-9",
+      "post_id": "post-sunset-03",
+      "user_id": "user-saobang",
+      "created_at": "2026-11-15T17:57:41.549Z"
+    },
+    {
+      "id": "like-10",
+      "post_id": "post-sunflower-04",
+      "user_id": "demo-user-id-01",
+      "created_at": "2026-11-15T13:33:41.549Z"
+    },
+    {
+      "id": "like-11",
+      "post_id": "post-sunflower-04",
+      "user_id": "user-meocam",
+      "created_at": "2026-11-15T14:15:41.549Z"
+    },
+    {
+      "id": "like-12",
+      "post_id": "post-sunflower-04",
+      "user_id": "user-giodem",
+      "created_at": "2026-11-15T15:33:41.549Z"
+    },
+    {
+      "id": "like-13",
+      "post_id": "post-coffee-05",
+      "user_id": "user-caphemuoi",
+      "created_at": "2026-11-15T04:39:41.549Z"
+    },
+    {
+      "id": "like-14",
+      "post_id": "post-coffee-05",
+      "user_id": "demo-user-id-01",
+      "created_at": "2026-11-15T08:15:41.549Z"
+    },
+    {
+      "id": "like-15",
+      "post_id": "post-room-06",
+      "user_id": "user-caovoi52",
+      "created_at": "2026-11-14T16:39:41.549Z"
+    }
+  ],
+  "saved_posts": [
+    {
+      "id": "save-1",
+      "post_id": "post-study-01",
+      "user_id": "demo-user-id-01",
+      "created_at": "2026-11-15T23:33:41.549Z"
+    },
+    {
+      "id": "save-2",
+      "post_id": "post-sunflower-04",
+      "user_id": "demo-user-id-01",
+      "created_at": "2026-11-15T15:03:41.549Z"
+    },
+    {
+      "id": "save-3",
+      "post_id": "post-coffee-05",
+      "user_id": "user-hoami",
+      "created_at": "2026-11-15T05:51:41.549Z"
+    },
+    {
+      "id": "save-4",
+      "post_id": "post-sunset-03",
+      "user_id": "user-giodem",
+      "created_at": "2026-11-15T19:03:41.549Z"
+    }
+  ],
+  "post_reports": [
+    {
+      "id": "rep-scam-01",
+      "post_id": "post-rejected-scam",
+      "reporter_id": "demo-user-id-01",
+      "reason": "Lừa đảo, bẫy việc làm hoặc yêu cầu tiền bạc",
+      "details": "Bài viết tuyển người qua biên giới có dấu hiệu buôn người nguy hiểm.",
+      "status": "RESOLVED",
+      "resolved_by": "admin-master-id",
+      "created_at": "2026-11-12T15:27:41.549Z"
+    },
+    {
+      "id": "rep-hate-02",
+      "post_id": "post-rejected-hate",
+      "reporter_id": "user-hoami",
+      "reason": "Ngôn từ thù ghét, quấy rối hoặc bạo lực",
+      "details": "Chửi bới thô tục và đe dọa người khác.",
+      "status": "RESOLVED",
+      "resolved_by": "admin-master-id",
+      "created_at": "2026-11-13T03:27:41.549Z"
+    },
+    {
+      "id": "rep_1794791056408",
+      "post_id": "post_public_1794791056295",
+      "reporter_id": "user_p2_reader_1794791056285",
+      "reason": "Lừa đảo, bẫy việc làm hoặc yêu cầu tiền bạc",
+      "details": "Bài viết có dấu hiệu đáng ngờ cần xem xét kỹ.",
+      "status": "RESOLVED",
+      "created_at": "2026-11-16T01:04:16.408Z",
+      "resolved_by": "user_p2_admin_1794791056290"
+    }
+  ],
+  "user_reports": [],
+  "user_blocks": [],
+  "ai_chat_sessions": [
+    {
+      "id": "session-burnout-01",
+      "user_id": "demo-user-id-01",
+      "title": "Giải tỏa áp lực thi cử và đồ án tốt nghiệp",
+      "dominant_mood": "Áp lực",
+      "created_at": "2026-11-15T01:03:41.549Z",
+      "updated_at": "2026-11-15T23:03:41.549Z"
+    },
+    {
+      "id": "session-sleep-02",
+      "user_id": "demo-user-id-01",
+      "title": "Khó ngủ và lo âu ban đêm",
+      "dominant_mood": "Lo lắng",
+      "created_at": "2026-11-13T01:03:41.549Z",
+      "updated_at": "2026-11-13T01:03:41.549Z"
+    }
+  ],
+  "ai_chat_messages": [
+    {
+      "id": "msg-1",
+      "session_id": "session-burnout-01",
+      "sender": "user",
+      "message": "Heli ơi, mình thấy bế tắc quá, đồ án tốt nghiệp làm mãi không xong mà sắp đến hạn bảo vệ rồi.",
+      "detected_emotion": "Bế tắc & Căng thẳng",
+      "detected_topics": "Học tập, Đồ án tốt nghiệp",
+      "created_at": "2026-11-15T01:03:41.549Z"
+    },
+    {
+      "id": "msg-2",
+      "session_id": "session-burnout-01",
+      "sender": "heli",
+      "message": "Chào bạn! Mình hiểu cảm giác này rất rõ. Khi khối lượng công việc quá lớn dồn dập, tâm trí chúng ta rất dễ rơi vào trạng thái quá tải và tê liệt. Bây giờ hãy cùng mình thực hiện kỹ thuật thở 4-7-8: hít vào thật sâu bằng mũi trong 4 giây, giữ hơi 7 giây và thở ra nhẹ nhàng bằng miệng trong 8 giây nhé. Bạn có thể chia sẻ cho mình phần nào trong đồ án đang làm bạn đau đầu nhất không?",
+      "detected_emotion": "Đồng cảm & Hướng dẫn thở 4-7-8",
+      "detected_topics": "Thư giãn, Giảm stress",
+      "created_at": "2026-11-15T01:03:41.549Z"
+    },
+    {
+      "id": "msg-3",
+      "session_id": "session-burnout-01",
+      "sender": "user",
+      "message": "Mình đang bị rối phần mô hình kết nối WebRTC P2P và cách giải thích với hội đồng bảo vệ.",
+      "detected_emotion": "Lo lắng kỹ thuật",
+      "detected_topics": "Kiến trúc P2P, WebRTC",
+      "created_at": "2026-11-15T22:57:41.549Z"
+    },
+    {
+      "id": "msg-4",
+      "session_id": "session-burnout-01",
+      "sender": "heli",
+      "message": "Về WebRTC P2P, bạn hãy nhớ nguyên tắc cốt lõi: máy chủ trung tâm chỉ làm nhiệm vụ \"mai mối\" (Signaling) để trao đổi địa chỉ SDP và ICE Candidate giữa 2 máy khách. Sau khi kết nối thành công, tin nhắn đi thẳng ngang hàng qua RTCDataChannel và chỉ lưu trong RAM trình duyệt (Zero Server Storage). Điểm này thể hiện tính bảo mật và riêng tư vượt trội của đề tài bạn đấy!",
+      "detected_emotion": "Khích lệ & Tư vấn chuyên môn",
+      "detected_topics": "WebRTC, Kiến trúc an toàn",
+      "created_at": "2026-11-15T23:03:41.549Z"
+    },
+    {
+      "id": "msg-5",
+      "session_id": "session-sleep-02",
+      "sender": "user",
+      "message": "Đêm nào nằm xuống giường mình cũng trằn trọc đến 3 giờ sáng vì nghĩ về những sai lầm trong quá khứ...",
+      "detected_emotion": "Rối loạn giấc ngủ, Tự trách",
+      "detected_topics": "Mất ngủ, Sang chấn quá khứ",
+      "created_at": "2026-11-13T01:03:41.549Z"
+    },
+    {
+      "id": "msg-6",
+      "session_id": "session-sleep-02",
+      "sender": "heli",
+      "message": "Màn đêm tĩnh mịch thường là lúc tâm trí dễ phóng đại những nỗi sợ và nuối tiếc nhất. Hãy nhắc nhở bản thân rằng: sai lầm trong quá khứ là bài học giúp bạn trưởng thành, chứ không phải bản án chung thân định nghĩa con người bạn. Thử bài tập Tiếp đất 5-4-3-2-1 nhé: tìm 5 thứ bạn nhìn thấy, 4 thứ bạn có thể chạm vào, 3 âm thanh bạn nghe thấy, 2 mùi hương bạn ngửi được và 1 điều tích cực về bản thân.",
+      "detected_emotion": "Vỗ về & Kỹ thuật Tiếp đất 5-4-3-2-1",
+      "detected_topics": "Chánh niệm, Giấc ngủ an lành",
+      "created_at": "2026-11-13T01:03:41.549Z"
+    }
+  ],
+  "mood_logs": [],
+  "safety_shield_logs": [
+    {
+      "id": "log-safety-01",
+      "user_id": "user-bad-actor",
+      "risk_level": "DANGER",
+      "emergency_alert": true,
+      "flagged_issues": "[\"Dấu hiệu dụ dỗ việc làm bất thường hoặc nguy cơ buôn bán người qua biên giới\"]",
+      "created_at": "2026-11-12T13:03:41.549Z"
+    },
+    {
+      "id": "log-safety-02",
+      "user_id": "user-bad-actor",
+      "risk_level": "WARNING",
+      "emergency_alert": false,
+      "flagged_issues": "[\"Ngôn từ kích động tiêu cực, bạo lực ngôn từ\"]",
+      "created_at": "2026-11-13T01:03:41.549Z"
+    }
+  ],
+  "admin_logs": [],
+  "chat_sessions": [
+    {
+      "id": "p2p-session-01",
+      "peer_a_id": "demo-user-id-01",
+      "peer_b_id": "user-hoami",
+      "status": "CLOSED",
+      "created_at": "2026-11-14T01:03:41.549Z"
+    },
+    {
+      "id": "p2p-session-02",
+      "peer_a_id": "user-giodem",
+      "peer_b_id": "user-caovoi52",
+      "status": "CLOSED",
+      "created_at": "2026-11-15T01:03:41.549Z"
+    }
+  ]
+}

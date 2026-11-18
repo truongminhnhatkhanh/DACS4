@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+    <rect width="120" height="120" rx="60" fill="#0f172a" />
+    
+    <!-- Ocean Waves -->
+    <path d="M 15 90 Q 35 80 60 90 Q 85 100 105 90" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+    <!-- Whale Body -->
+    <path d="M 30 70 Q 50 45 80 50 Q 95 55 100 45 Q 95 62 85 70 Q 60 82 30 70 Z" fill="#0284c7" />
+    <!-- Eye -->
+    <circle cx="44" cy="64" r="2" fill="#ffffff" />
+    <!-- Water Spout -->
+    <path d="M 68 50 Q 65 35 55 30" fill="none" stroke="#bae6fd" stroke-width="2" stroke-linecap="round" />
+    <path d="M 70 50 Q 72 35 80 30" fill="none" stroke="#bae6fd" stroke-width="2" stroke-linecap="round" />
+  
+  </svg>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-11-09T15:34:43.148Z" agent="DACS4-VKU" version="24.0.0">
+  <diagram id="erd" name="ERD CSDL">
+    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+
+    <mxCell id="t_users" value="users&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  username: VARCHAR(50) [UK]&#xa;  anonymous_name: VARCHAR(50)&#xa;  avatar_url: VARCHAR(255)&#xa;  bio: TEXT&#xa;  recovery_email: VARCHAR(100)&#xa;  recovery_token_hash: VARCHAR(64)&#xa;  password_hash: VARCHAR(255)&#xa;  role: ENUM('user','admin')&#xa;  status: ENUM('ACTIVE','SUSPENDED','DELETED')&#xa;  is_guest: BOOLEAN&#xa;  last_login_at: TIMESTAMP&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="1"><mxGeometry x="50" y="50" width="250" height="270" as="geometry" /></mxCell>
+
+    <mxCell id="t_posts" value="posts&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  user_id: VARCHAR(36) [FK]&#xa;  mood_tag: VARCHAR(30)&#xa;  content: TEXT&#xa;  is_private: BOOLEAN&#xa;  status: ENUM('PENDING','APPROVED','REJECTED')&#xa;  rejection_reason: VARCHAR(255)&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#EFF6FF;strokeColor=#2563EB;" vertex="1" parent="1"><mxGeometry x="400" y="50" width="250" height="210" as="geometry" /></mxCell>
+
+    <mxCell id="t_comments" value="comments&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  post_id: VARCHAR(36) [FK]&#xa;  parent_id: VARCHAR(36) [FK]&#xa;  user_id: VARCHAR(36) [FK]&#xa;  author_name: VARCHAR(50)&#xa;  content: TEXT&#xa;  is_ai_bot: BOOLEAN&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#EFF6FF;strokeColor=#2563EB;" vertex="1" parent="1"><mxGeometry x="750" y="50" width="230" height="190" as="geometry" /></mxCell>
+
+    <mxCell id="t_likes" value="post_likes&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  post_id: VARCHAR(36) [FK]&#xa;  user_id: VARCHAR(36) [FK]&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#F8FAFC;strokeColor=#475569;" vertex="1" parent="1"><mxGeometry x="400" y="310" width="180" height="110" as="geometry" /></mxCell>
+
+    <mxCell id="t_saved" value="saved_posts&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  post_id: VARCHAR(36) [FK]&#xa;  user_id: VARCHAR(36) [FK]&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#F8FAFC;strokeColor=#475569;" vertex="1" parent="1"><mxGeometry x="610" y="310" width="180" height="110" as="geometry" /></mxCell>
+
+    <mxCell id="t_reports" value="post_reports&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  post_id: VARCHAR(36) [FK]&#xa;  reporter_id: VARCHAR(36) [FK]&#xa;  reason: VARCHAR(255)&#xa;  details: TEXT&#xa;  status: ENUM('PENDING','REVIEWING','RESOLVED','REJECTED')&#xa;  resolved_by: VARCHAR(36)&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="1"><mxGeometry x="820" y="280" width="250" height="180" as="geometry" /></mxCell>
+
+    <mxCell id="t_ai_ses" value="ai_chat_sessions&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  user_id: VARCHAR(36) [FK]&#xa;  title: VARCHAR(100)&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#FEF3C7;strokeColor=#D97706;" vertex="1" parent="1"><mxGeometry x="50" y="380" width="220" height="120" as="geometry" /></mxCell>
+
+    <mxCell id="t_ai_msg" value="ai_chat_messages&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  session_id: VARCHAR(36) [FK]&#xa;  sender: ENUM('user','heli')&#xa;  content: TEXT&#xa;  emotion_detected: VARCHAR(50)&#xa;  topic_detected: VARCHAR(50)&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#FEF3C7;strokeColor=#D97706;" vertex="1" parent="1"><mxGeometry x="50" y="540" width="220" height="170" as="geometry" /></mxCell>
+
+    <mxCell id="t_safety" value="safety_shield_logs&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  user_id: VARCHAR(36) [FK]&#xa;  risk_level: ENUM('SAFE','WARNING','DANGER')&#xa;  emergency_alert: BOOLEAN&#xa;  flagged_issues: TEXT&#xa;  advice: TEXT&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="1"><mxGeometry x="340" y="470" width="250" height="160" as="geometry" /></mxCell>
+
+    <mxCell id="t_p2p" value="chat_sessions (Signaling)&#xa;---------------------------------&#xa;* id: VARCHAR(36) [PK]&#xa;  peer_a_id: VARCHAR(36) [FK]&#xa;  peer_b_id: VARCHAR(36) [FK]&#xa;  topic: VARCHAR(50)&#xa;  status: ENUM('WAITING','CONNECTED','CLOSED')&#xa;  created_at: TIMESTAMP" style="swimlane;fontStyle=1;align=center;fillColor=#EFF6FF;strokeColor=#2563EB;" vertex="1" parent="1"><mxGeometry x="630" y="470" width="250" height="150" as="geometry" /></mxCell>
+
+    <!-- Connectors -->
+    <mxCell id="re_u_p" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;strokeColor=#059669;strokeWidth=1.5;" edge="1" parent="1" source="t_users" target="t_posts"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_p_c" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=diamond;endFill=1;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="t_posts" target="t_comments"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_p_l" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=diamond;endFill=1;strokeColor=#475569;" edge="1" parent="1" source="t_posts" target="t_likes"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_p_s" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=diamond;endFill=1;strokeColor=#475569;" edge="1" parent="1" source="t_posts" target="t_saved"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_p_r" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;strokeColor=#DC2626;" edge="1" parent="1" source="t_posts" target="t_reports"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_u_ai" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;strokeColor=#D97706;" edge="1" parent="1" source="t_users" target="t_ai_ses"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_ai_m" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=diamond;endFill=1;strokeColor=#D97706;" edge="1" parent="1" source="t_ai_ses" target="t_ai_msg"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="re_u_safe" value="1..N" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;strokeColor=#DC2626;" edge="1" parent="1" source="t_users" target="t_safety"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="310" y="280" /><mxPoint x="310" y="520" /></Array></mxGeometry></mxCell>
+  </root>
+</mxGraphModel>
+  </diagram>
+</mxfile>

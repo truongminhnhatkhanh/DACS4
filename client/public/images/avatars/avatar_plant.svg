@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+    <rect width="120" height="120" rx="60" fill="#dcfce7" />
+    
+    <!-- Pot -->
+    <polygon points="45,72 75,72 70,100 50,100" fill="#ea580c" />
+    <ellipse cx="60" cy="72" rx="15" ry="3" fill="#9a3412" />
+    <!-- Stem -->
+    <path d="M 60 72 Q 60 48 58 35" fill="none" stroke="#16a34a" stroke-width="4" stroke-linecap="round" />
+    <!-- Leaves -->
+    <path d="M 58 45 Q 35 30 30 45 Q 45 55 58 48" fill="#22c55e" />
+    <path d="M 58 35 Q 75 18 85 30 Q 75 45 58 38" fill="#4ade80" />
+  
+  </svg>

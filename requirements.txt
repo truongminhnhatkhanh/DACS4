@@ -1,0 +1,23 @@
+# ==============================================================================
+# HELI PLATFORM - PYTHON REQUIREMENTS & ACADEMIC TOOLING
+# Hệ thống Chia sẻ Tâm sự Ẩn danh Hybrid P2P & Trợ lý AI An toàn (VKU DACS4)
+# ==============================================================================
+
+# 1. Thư viện Xử lý & Tự động hóa Tài liệu Học thuật (Thesis & Docx Automation)
+python-docx>=1.1.0
+
+# 2. SDK Trí tuệ Nhân tạo Google Gemini (AI Moderation & Psychology Companion)
+google-genai>=0.1.0
+google-generativeai>=0.8.3
+
+# 3. Kết nối & Quản trị Cơ sở Dữ liệu MySQL (Database Utilities)
+mysql-connector-python>=8.0.33
+PyMySQL>=1.1.0
+
+# 4. Truyền thông Mạng & Kiểm thử API Bất đồng bộ (Networking & Testing)
+requests>=2.31.0
+urllib3>=2.0.7
+
+# 5. Cấu hình Môi trường & Xác thực Cấu trúc Dữ liệu (Config & Validation)
+python-dotenv>=1.0.1
+pydantic>=2.6.0

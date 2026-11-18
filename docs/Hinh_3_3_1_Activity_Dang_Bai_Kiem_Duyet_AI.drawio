@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-11-09T15:34:43.143Z" agent="DACS4-VKU" version="24.0.0">
+  <diagram id="act_post" name="Hoạt Động Đăng Bài">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="lu" value="Người Dùng (Client)" style="swimlane;startSize=26;fillColor=#ECFDF5;strokeColor=#059669;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="60" y="40" width="280" height="740" as="geometry" /></mxCell>
+    <mxCell id="ls" value="Máy Chủ Backend &amp; DB" style="swimlane;startSize=26;fillColor=#F8FAFC;strokeColor=#475569;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="340" y="40" width="340" height="740" as="geometry" /></mxCell>
+    <mxCell id="lai" value="Google Gemini AI" style="swimlane;startSize=26;fillColor=#FEF3C7;strokeColor=#D97706;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="680" y="40" width="280" height="740" as="geometry" /></mxCell>
+
+    <mxCell id="s_start" value="" style="ellipse;fillColor=#0F172A;" vertex="1" parent="lu"><mxGeometry x="125" y="40" width="30" height="30" as="geometry" /></mxCell>
+    <mxCell id="s_form" value="Nhập nội dung, chọn nhãn cảm xúc&#xa;&amp; chọn chế độ (Công khai / Riêng tư)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#059669;" vertex="1" parent="lu"><mxGeometry x="40" y="100" width="200" height="50" as="geometry" /></mxCell>
+    <mxCell id="s_sub" value="Bấm 'Chia sẻ tâm sự'&#xa;(POST /api/posts)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#059669;" vertex="1" parent="lu"><mxGeometry x="65" y="180" width="150" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="s_db_pend" value="Lưu bài viết vào CSDL&#xa;với trạng thái PENDING" style="rounded=1;fillColor=#FFFFFF;strokeColor=#475569;" vertex="1" parent="ls"><mxGeometry x="90" y="180" width="160" height="45" as="geometry" /></mxCell>
+    <mxCell id="s_call_ai" value="Gọi inspectAndComfort()&#xa;gửi text tới Gemini" style="rounded=1;fillColor=#FFFFFF;strokeColor=#475569;" vertex="1" parent="ls"><mxGeometry x="90" y="250" width="160" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="s_ai_eval" value="Quét độc hại, thù ghét, tự hại&#xa;&amp; sinh câu an ủi đồng cảm" style="rounded=1;fillColor=#FFFFFF;strokeColor=#D97706;fontStyle=1;" vertex="1" parent="lai"><mxGeometry x="50" y="245" width="180" height="55" as="geometry" /></mxCell>
+
+    <mxCell id="s_dec_tox" value="Nội dung an toàn?" style="rhombus;fillColor=#FEF9C3;strokeColor=#CA8A04;" vertex="1" parent="ls"><mxGeometry x="100" y="330" width="140" height="70" as="geometry" /></mxCell>
+    <mxCell id="s_rej" value="Cập nhật REJECTED&#xa;&amp; lưu lý do vi phạm" style="rounded=1;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="ls"><mxGeometry x="10" y="440" width="140" height="50" as="geometry" /></mxCell>
+    <mxCell id="s_ui_err" value="Hiển thị lý do bị từ chối" style="rounded=1;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="lu"><mxGeometry x="65" y="440" width="150" height="50" as="geometry" /></mxCell>
+    <mxCell id="s_end_rej" value="" style="ellipse;shape=endState;fillColor=#DC2626;strokeColor=#FFFFFF;strokeWidth=2;" vertex="1" parent="lu"><mxGeometry x="125" y="520" width="30" height="30" as="geometry" /></mxCell>
+
+    <mxCell id="s_appr" value="Cập nhật APPROVED &amp;&#xa;Lưu câu an ủi của Heli vào Comments" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;fontStyle=1;" vertex="1" parent="ls"><mxGeometry x="170" y="440" width="160" height="55" as="geometry" /></mxCell>
+    <mxCell id="s_dec_priv" value="is_private = true?" style="rhombus;fillColor=#FEF9C3;strokeColor=#CA8A04;" vertex="1" parent="ls"><mxGeometry x="190" y="530" width="120" height="60" as="geometry" /></mxCell>
+    <mxCell id="s_ui_feed" value="Hiển thị bài viết trên Bảng tin&#xa;&amp; hiện toast an ủi từ Heli" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="lu"><mxGeometry x="50" y="620" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="s_end_ok" value="" style="ellipse;shape=endState;fillColor=#059669;strokeColor=#FFFFFF;strokeWidth=2;" vertex="1" parent="lu"><mxGeometry x="125" y="690" width="30" height="30" as="geometry" /></mxCell>
+
+    <mxCell id="es1" style="strokeColor=#059669;" edge="1" parent="1" source="s_start" target="s_form"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es2" style="strokeColor=#059669;" edge="1" parent="1" source="s_form" target="s_sub"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es3" style="strokeColor=#059669;" edge="1" parent="1" source="s_sub" target="s_db_pend"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es4" style="strokeColor=#475569;" edge="1" parent="1" source="s_db_pend" target="s_call_ai"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es5" style="strokeColor=#D97706;" edge="1" parent="1" source="s_call_ai" target="s_ai_eval"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es6" style="strokeColor=#D97706;" edge="1" parent="1" source="s_ai_eval" target="s_dec_tox"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="820" y="365" /></Array></mxGeometry></mxCell>
+    <mxCell id="es7" value="Không an toàn" style="strokeColor=#DC2626;" edge="1" parent="1" source="s_dec_tox" target="s_rej"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es8" style="strokeColor=#DC2626;" edge="1" parent="1" source="s_rej" target="s_ui_err"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es9" style="strokeColor=#DC2626;" edge="1" parent="1" source="s_ui_err" target="s_end_rej"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es10" value="Hợp lệ" style="strokeColor=#059669;" edge="1" parent="1" source="s_dec_tox" target="s_appr"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es11" style="strokeColor=#059669;" edge="1" parent="1" source="s_appr" target="s_dec_priv"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="es12" value="Công khai" style="strokeColor=#059669;" edge="1" parent="1" source="s_dec_priv" target="s_ui_feed"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="490" y="645" /></Array></mxGeometry></mxCell>
+    <mxCell id="es13" style="strokeColor=#059669;" edge="1" parent="1" source="s_ui_feed" target="s_end_ok"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel>
+  </diagram>
+</mxfile>

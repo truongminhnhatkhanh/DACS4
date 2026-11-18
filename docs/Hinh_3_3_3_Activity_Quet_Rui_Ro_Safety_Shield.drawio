@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-11-09T15:34:43.145Z" agent="DACS4-VKU" version="24.0.0">
+  <diagram id="act_safe" name="Hoạt Động Quét Safety">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="lu3" value="Người Dùng Chat P2P" style="swimlane;startSize=26;fillColor=#FEF2F2;strokeColor=#DC2626;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="80" y="40" width="280" height="660" as="geometry" /></mxCell>
+    <mxCell id="ls3" value="Máy Chủ Backend &amp; DB" style="swimlane;startSize=26;fillColor=#F8FAFC;strokeColor=#475569;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="360" y="40" width="320" height="660" as="geometry" /></mxCell>
+    <mxCell id="lai3" value="Gemini AI Engine" style="swimlane;startSize=26;fillColor=#FEF3C7;strokeColor=#D97706;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="680" y="40" width="280" height="660" as="geometry" /></mxCell>
+
+    <mxCell id="sf_start" value="" style="ellipse;fillColor=#0F172A;" vertex="1" parent="lu3"><mxGeometry x="125" y="40" width="30" height="30" as="geometry" /></mxCell>
+    <mxCell id="sf_click" value="Bấm 'Quét an toàn AI'&#xa;khi thấy tin nhắn khả nghi" style="rounded=1;fillColor=#FFFFFF;strokeColor=#DC2626;" vertex="1" parent="lu3"><mxGeometry x="50" y="100" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="sf_send" value="Gửi lịch sử chat RAM&#xa;POST /api/safety/inspect" style="rounded=1;fillColor=#FFFFFF;strokeColor=#DC2626;" vertex="1" parent="lu3"><mxGeometry x="50" y="180" width="180" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="sf_call" value="Gọi analyzeSafetyRisk()&#xa;gửi hội thoại cho Gemini" style="rounded=1;fillColor=#FFFFFF;strokeColor=#475569;" vertex="1" parent="ls3"><mxGeometry x="80" y="180" width="160" height="45" as="geometry" /></mxCell>
+    <mxCell id="sf_eval" value="Phân tích bẫy việc làm, lừa tình,&#xa;dụ dỗ nạp tiền, tống tiền" style="rounded=1;fillColor=#FFFFFF;strokeColor=#D97706;fontStyle=1;" vertex="1" parent="lai3"><mxGeometry x="40" y="175" width="200" height="55" as="geometry" /></mxCell>
+
+    <mxCell id="sf_dec" value="Mức độ rủi ro?" style="rhombus;fillColor=#FEF9C3;strokeColor=#CA8A04;" vertex="1" parent="ls3"><mxGeometry x="95" y="270" width="130" height="70" as="geometry" /></mxCell>
+
+    <mxCell id="sf_safe" value="Trả về SAFE (Bình thường)" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="ls3"><mxGeometry x="10" y="380" width="140" height="45" as="geometry" /></mxCell>
+    <mxCell id="sf_dang" value="Trả về DANGER (Nguy hiểm)&#xa;&amp; lưu safety_shield_logs" style="rounded=1;fillColor=#FEE2E2;strokeColor=#DC2626;fontStyle=1;" vertex="1" parent="ls3"><mxGeometry x="160" y="380" width="150" height="55" as="geometry" /></mxCell>
+
+    <mxCell id="sf_ui_safe" value="Báo an toàn, tiếp tục trò chuyện" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="lu3"><mxGeometry x="50" y="380" width="180" height="45" as="geometry" /></mxCell>
+    <mxCell id="sf_ui_dang" value="Bật Popup Cảnh Báo Đỏ Khẩn Cấp,&#xa;hiển thị Hotline (111, 113, 1900 6233)&#xa;&amp; nút 'Ngắt kết nối ngay'" style="rounded=1;fillColor=#FEE2E2;strokeColor=#DC2626;fontStyle=1;" vertex="1" parent="lu3"><mxGeometry x="35" y="480" width="210" height="65" as="geometry" /></mxCell>
+    <mxCell id="sf_end" value="" style="ellipse;shape=endState;fillColor=#059669;strokeColor=#FFFFFF;strokeWidth=2;" vertex="1" parent="lu3"><mxGeometry x="125" y="590" width="30" height="30" as="geometry" /></mxCell>
+
+    <mxCell id="esf1" style="strokeColor=#DC2626;" edge="1" parent="1" source="sf_start" target="sf_click"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf2" style="strokeColor=#DC2626;" edge="1" parent="1" source="sf_click" target="sf_send"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf3" style="strokeColor=#DC2626;" edge="1" parent="1" source="sf_send" target="sf_call"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf4" style="strokeColor=#475569;" edge="1" parent="1" source="sf_call" target="sf_eval"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf5" style="strokeColor=#D97706;" edge="1" parent="1" source="sf_eval" target="sf_dec"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="820" y="305" /></Array></mxGeometry></mxCell>
+    <mxCell id="esf6" value="SAFE" style="strokeColor=#059669;" edge="1" parent="1" source="sf_dec" target="sf_safe"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf7" value="DANGER" style="strokeColor=#DC2626;" edge="1" parent="1" source="sf_dec" target="sf_dang"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf8" style="strokeColor=#059669;" edge="1" parent="1" source="sf_safe" target="sf_ui_safe"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf9" style="strokeColor=#DC2626;" edge="1" parent="1" source="sf_dang" target="sf_ui_dang"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="595" y="512" /></Array></mxGeometry></mxCell>
+    <mxCell id="esf10" style="strokeColor=#059669;" edge="1" parent="1" source="sf_ui_safe" target="sf_end"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="esf11" style="strokeColor=#DC2626;" edge="1" parent="1" source="sf_ui_dang" target="sf_end"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#070b19" />
+      <stop offset="100%" stop-color="#18223c" />
+    </linearGradient>
+    <linearGradient id="roomWall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e2433" />
+      <stop offset="100%" stop-color="#0f131d" />
+    </linearGradient>
+    <radialGradient id="lampGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#f59e0b" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="deskWood" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#78350f" />
+      <stop offset="50%" stop-color="#92400e" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+    <linearGradient id="laptopScreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Wall -->
+  <rect width="800" height="480" fill="url(#roomWall)" />
+
+  <!-- Arched Window -->
+  <path d="M 120 80 Q 230 10 340 80 L 340 260 L 120 260 Z" fill="url(#nightSky)" />
+  <!-- Stars in Window -->
+  <circle cx="160" cy="110" r="1.5" fill="#fff" opacity="0.8" />
+  <circle cx="210" cy="70" r="2" fill="#fff" opacity="0.9" />
+  <circle cx="270" cy="95" r="1.5" fill="#fff" opacity="0.7" />
+  <circle cx="310" cy="140" r="2" fill="#fff" opacity="0.8" />
+  <circle cx="180" cy="170" r="1.2" fill="#fff" opacity="0.6" />
+  <circle cx="250" cy="190" r="1.8" fill="#fff" opacity="0.9" />
+  <!-- Crescent Moon -->
+  <path d="M 280 60 A 24 24 0 1 0 300 95 A 20 20 0 1 1 280 60 Z" fill="#fef08a" opacity="0.95" />
+  <!-- Window Frame -->
+  <path d="M 120 80 Q 230 10 340 80 L 340 260 L 120 260 Z" fill="none" stroke="#334155" stroke-width="6" />
+  <line x1="230" y1="45" x2="230" y2="260" stroke="#334155" stroke-width="4" />
+  <line x1="120" y1="160" x2="340" y2="160" stroke="#334155" stroke-width="4" />
+
+  <!-- Lamp Light Cone -->
+  <polygon points="560,180 340,420 740,420" fill="url(#lampGlow)" opacity="0.65" />
+
+  <!-- Desk Surface -->
+  <rect x="0" y="320" width="800" height="160" fill="url(#deskWood)" />
+  <rect x="0" y="320" width="800" height="8" fill="#b45309" opacity="0.6" />
+
+  <!-- Laptop -->
+  <g transform="translate(380, 260)">
+    <!-- Screen -->
+    <rect x="0" y="0" width="160" height="100" rx="6" fill="#1e293b" stroke="#475569" stroke-width="2" />
+    <rect x="8" y="8" width="144" height="84" rx="3" fill="url(#laptopScreen)" />
+    <!-- Code lines on laptop -->
+    <rect x="18" y="20" width="60" height="4" rx="2" fill="#ffffff" opacity="0.9" />
+    <rect x="18" y="28" width="90" height="4" rx="2" fill="#bae6fd" opacity="0.8" />
+    <rect x="28" y="36" width="70" height="4" rx="2" fill="#fef08a" opacity="0.8" />
+    <rect x="28" y="44" width="80" height="4" rx="2" fill="#a7f3d0" opacity="0.8" />
+    <rect x="18" y="52" width="50" height="4" rx="2" fill="#fbcfe8" opacity="0.8" />
+    <rect x="18" y="64" width="100" height="12" rx="3" fill="#0369a1" opacity="0.6" />
+    <!-- Base -->
+    <polygon points="-16,102 176,102 160,110 0,110" fill="#cbd5e1" />
+  </g>
+
+  <!-- Desk Lamp -->
+  <g transform="translate(560, 140)">
+    <path d="M 30 180 L 30 100 Q 30 40 -10 30" fill="none" stroke="#d97706" stroke-width="6" stroke-linecap="round" />
+    <!-- Shade -->
+    <path d="M -30 20 L 10 35 L -10 70 Z" fill="#b45309" />
+    <circle cx="-5" cy="50" r="10" fill="#fef08a" />
+    <!-- Base -->
+    <ellipse cx="30" cy="180" rx="25" ry="8" fill="#78350f" stroke="#b45309" stroke-width="2" />
+  </g>
+
+  <!-- Coffee Mug with steam -->
+  <g transform="translate(300, 310)">
+    <rect x="0" y="0" width="36" height="42" rx="4" fill="#f1f5f9" />
+    <path d="M 36 8 Q 50 20 36 32" fill="none" stroke="#f1f5f9" stroke-width="4" stroke-linecap="round" />
+    <ellipse cx="18" cy="4" rx="16" ry="4" fill="#78350f" />
+    <!-- Steam -->
+    <path d="M 12 -4 Q 8 -16 14 -24 Q 20 -32 16 -40" fill="none" stroke="#cbd5e1" stroke-width="2" opacity="0.4" stroke-linecap="round" />
+    <path d="M 22 -6 Q 26 -18 20 -28 Q 14 -36 22 -44" fill="none" stroke="#cbd5e1" stroke-width="1.8" opacity="0.3" stroke-linecap="round" />
+  </g>
+
+  <!-- Open Notebook & Pen -->
+  <g transform="translate(200, 335)">
+    <polygon points="0,10 70,0 80,45 10,55" fill="#f8fafc" />
+    <polygon points="70,0 140,10 130,55 60,45" fill="#f1f5f9" />
+    <line x1="70" y1="0" x2="70" y2="45" stroke="#94a3b8" stroke-width="2" />
+    <line x1="15" y1="18" x2="55" y2="14" stroke="#cbd5e1" stroke-width="1.5" />
+    <line x1="15" y1="26" x2="50" y2="22" stroke="#cbd5e1" stroke-width="1.5" />
+    <line x1="15" y1="34" x2="58" y2="30" stroke="#cbd5e1" stroke-width="1.5" />
+    <line x1="85" y1="14" x2="125" y2="18" stroke="#cbd5e1" stroke-width="1.5" />
+    <line x1="85" y1="22" x2="120" y2="26" stroke="#cbd5e1" stroke-width="1.5" />
+    <!-- Pen -->
+    <line x1="145" y1="15" x2="165" y2="45" stroke="#0284c7" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- Small Plant -->
+  <g transform="translate(140, 290)">
+    <polygon points="5,35 35,35 30,60 10,60" fill="#ea580c" />
+    <ellipse cx="20" cy="35" rx="16" ry="5" fill="#7c2d12" />
+    <path d="M 20 35 Q 10 15 5 5 Q 20 15 20 35" fill="#22c55e" />
+    <path d="M 20 35 Q 30 18 35 10 Q 25 20 20 35" fill="#16a34a" />
+    <path d="M 20 35 Q 20 10 20 -2 Q 26 12 20 35" fill="#4ade80" />
+  </g>
+
+  <!-- Motivational Tag -->
+  <rect x="580" y="30" width="190" height="36" rx="18" fill="#1e293b" stroke="#334155" stroke-width="1" />
+  <circle cx="600" cy="48" r="6" fill="#10b981" />
+  <text x="616" y="53" fill="#e2e8f0" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">DACS4 • Graduation Journey</text>
+</svg>

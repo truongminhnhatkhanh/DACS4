@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cosmicBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <radialGradient id="milkyWay" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="480" fill="url(#cosmicBg)" />
+  <ellipse cx="400" cy="190" rx="350" ry="120" transform="rotate(-15, 400, 190)" fill="url(#milkyWay)" />
+
+  <!-- Stars Cluster -->
+  <g fill="#ffffff">
+    <circle cx="120" cy="80" r="1.5" opacity="0.9" />
+    <circle cx="180" cy="140" r="1" opacity="0.7" />
+    <circle cx="240" cy="60" r="2" opacity="0.95" />
+    <circle cx="290" cy="110" r="1.2" opacity="0.8" />
+    <circle cx="350" cy="70" r="1.8" opacity="0.9" />
+    <circle cx="420" cy="130" r="2.2" opacity="1" />
+    <circle cx="480" cy="85" r="1.4" opacity="0.8" />
+    <circle cx="530" cy="150" r="1.8" opacity="0.9" />
+    <circle cx="610" cy="90" r="2" opacity="0.95" />
+    <circle cx="680" cy="130" r="1.2" opacity="0.7" />
+    <circle cx="730" cy="70" r="1.6" opacity="0.85" />
+    
+    <circle cx="80" cy="210" r="1.2" opacity="0.7" />
+    <circle cx="150" cy="240" r="1.6" opacity="0.8" />
+    <circle cx="270" cy="220" r="1.3" opacity="0.6" />
+    <circle cx="390" cy="250" r="2" opacity="0.9" />
+    <circle cx="510" cy="230" r="1.5" opacity="0.8" />
+    <circle cx="640" cy="210" r="1.7" opacity="0.85" />
+    <circle cx="710" cy="250" r="1.2" opacity="0.6" />
+  </g>
+
+  <!-- Shooting Star -->
+  <line x1="520" y1="40" x2="380" y2="120" stroke="#bae6fd" stroke-width="2" stroke-linecap="round" />
+  <circle cx="380" cy="120" r="3.5" fill="#ffffff" />
+
+  <!-- Peaceful Mountain Silhouettes -->
+  <polygon points="0,480 0,360 140,290 280,380 430,280 600,410 750,310 800,340 800,480" fill="#020617" />
+  <polygon points="0,480 0,400 90,340 210,420 340,330 500,430 680,350 800,390 800,480" fill="#0b0f19" opacity="0.9" />
+
+  <rect x="32" y="32" width="200" height="34" rx="17" fill="rgba(15,23,42,0.85)" stroke="#38bdf8" stroke-opacity="0.4" />
+  <circle cx="50" cy="49" r="5" fill="#38bdf8" />
+  <text x="64" y="54" fill="#e0f2fe" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">Bầu Trời Sao • Chỉ Mình Tôi</text>
+</svg>

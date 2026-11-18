@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-11-09T15:34:43.144Z" agent="DACS4-VKU" version="24.0.0">
+  <diagram id="act_rec" name="Hoạt Động Khôi Phục Mã">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+  <root>
+    <mxCell id="0" /><mxCell id="1" parent="0" />
+    <mxCell id="lu2" value="Người Dùng (Client)" style="swimlane;startSize=26;fillColor=#FEF9C3;strokeColor=#CA8A04;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="80" y="40" width="300" height="740" as="geometry" /></mxCell>
+    <mxCell id="ls2" value="Máy Chủ Backend &amp; CSDL" style="swimlane;startSize=26;fillColor=#F8FAFC;strokeColor=#059669;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="380" y="40" width="460" height="740" as="geometry" /></mxCell>
+
+    <mxCell id="r_start" value="" style="ellipse;fillColor=#0F172A;" vertex="1" parent="lu2"><mxGeometry x="135" y="40" width="30" height="30" as="geometry" /></mxCell>
+    <mxCell id="r_open" value="Mở modal 'Khôi phục tài khoản'&#xa;&amp; nhập mã 16 ký tự" style="rounded=1;fillColor=#FFFFFF;strokeColor=#CA8A04;" vertex="1" parent="lu2"><mxGeometry x="60" y="100" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="r_sub" value="Gửi POST /api/auth/recover&#xa;{ recoveryCode }" style="rounded=1;fillColor=#FFFFFF;strokeColor=#CA8A04;" vertex="1" parent="lu2"><mxGeometry x="60" y="180" width="180" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="r_hash" value="Server băm HMAC-SHA256&#xa;hashRecoveryCode(code)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#059669;" vertex="1" parent="ls2"><mxGeometry x="130" y="180" width="200" height="45" as="geometry" /></mxCell>
+    <mxCell id="r_query" value="Truy vấn CSDL qua index&#xa;recovery_token_hash = hash (O(1))" style="rounded=1;fillColor=#FFFFFF;strokeColor=#059669;" vertex="1" parent="ls2"><mxGeometry x="130" y="250" width="200" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="r_find" value="Tìm thấy tài khoản?" style="rhombus;fillColor=#FEF9C3;strokeColor=#CA8A04;" vertex="1" parent="ls2"><mxGeometry x="155" y="320" width="150" height="70" as="geometry" /></mxCell>
+
+    <mxCell id="r_leg" value="Kiểm tra bcrypt_compare&#xa;(Legacy User cũ)" style="rounded=1;fillColor=#FFFFFF;strokeColor=#D97706;" vertex="1" parent="ls2"><mxGeometry x="270" y="415" width="170" height="50" as="geometry" /></mxCell>
+    <mxCell id="r_dec_leg" value="Khớp bcrypt?" style="rhombus;fillColor=#FEF9C3;strokeColor=#CA8A04;" vertex="1" parent="ls2"><mxGeometry x="295" y="490" width="120" height="60" as="geometry" /></mxCell>
+    <mxCell id="r_mig" value="Auto-migrate sang HMAC hash&#xa;&amp; xóa recovery_code_hash cũ" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="ls2"><mxGeometry x="260" y="580" width="190" height="50" as="geometry" /></mxCell>
+
+    <mxCell id="r_dec_lock" value="Trạng thái tài khoản&#xa;SUSPENDED / DELETED?" style="rhombus;fillColor=#FEF9C3;strokeColor=#CA8A04;" vertex="1" parent="ls2"><mxGeometry x="30" y="410" width="180" height="75" as="geometry" /></mxCell>
+    <mxCell id="r_err_lock" value="Báo lỗi 403: Tài khoản đã bị khóa" style="rounded=1;fillColor=#FEE2E2;strokeColor=#DC2626;" vertex="1" parent="lu2"><mxGeometry x="60" y="425" width="180" height="45" as="geometry" /></mxCell>
+
+    <mxCell id="r_jwt" value="Cấp JWT session token mới&#xa;&amp; cập nhật last_login_at" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;fontStyle=1;" vertex="1" parent="ls2"><mxGeometry x="30" y="530" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="r_ui_ok" value="Đăng nhập thành công,&#xa;khuyến nghị cấp lại mã mới" style="rounded=1;fillColor=#ECFDF5;strokeColor=#059669;" vertex="1" parent="lu2"><mxGeometry x="60" y="530" width="180" height="50" as="geometry" /></mxCell>
+    <mxCell id="r_end_ok" value="" style="ellipse;shape=endState;fillColor=#059669;strokeColor=#FFFFFF;strokeWidth=2;" vertex="1" parent="lu2"><mxGeometry x="135" y="620" width="30" height="30" as="geometry" /></mxCell>
+
+    <mxCell id="er1" style="strokeColor=#CA8A04;" edge="1" parent="1" source="r_start" target="r_open"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er2" style="strokeColor=#CA8A04;" edge="1" parent="1" source="r_open" target="r_sub"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er3" style="strokeColor=#059669;" edge="1" parent="1" source="r_sub" target="r_hash"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er4" style="strokeColor=#059669;" edge="1" parent="1" source="r_hash" target="r_query"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er5" style="strokeColor=#059669;" edge="1" parent="1" source="r_query" target="r_find"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er6" value="Có" style="strokeColor=#059669;" edge="1" parent="1" source="r_find" target="r_dec_lock"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er7" value="Không" style="strokeColor=#D97706;" edge="1" parent="1" source="r_find" target="r_leg"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er8" style="strokeColor=#D97706;" edge="1" parent="1" source="r_leg" target="r_dec_leg"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er9" value="Khớp" style="strokeColor=#059669;" edge="1" parent="1" source="r_dec_leg" target="r_mig"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er10" style="strokeColor=#059669;" edge="1" parent="1" source="r_mig" target="r_dec_lock"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="600" y="660" /><mxPoint x="490" y="660" /></Array></mxGeometry></mxCell>
+    <mxCell id="er11" value="Bị khóa" style="strokeColor=#DC2626;" edge="1" parent="1" source="r_dec_lock" target="r_err_lock"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er12" value="ACTIVE" style="strokeColor=#059669;" edge="1" parent="1" source="r_dec_lock" target="r_jwt"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er13" style="strokeColor=#059669;" edge="1" parent="1" source="r_jwt" target="r_ui_ok"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="er14" style="strokeColor=#059669;" edge="1" parent="1" source="r_ui_ok" target="r_end_ok"><mxGeometry relative="1" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel>
+  </diagram>
+</mxfile>

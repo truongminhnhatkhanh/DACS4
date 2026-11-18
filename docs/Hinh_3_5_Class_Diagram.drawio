@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-11-09T15:34:43.149Z" agent="DACS4-VKU" version="24.0.0">
+  <diagram id="class" name="Class Diagram">
+    <mxGraphModel dx="1420" dy="880" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- Class: User -->
+    <mxCell id="cls_user" value="User&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ username: String&#xa;+ anonymous_name: String&#xa;+ avatar_url: String&#xa;+ bio: String&#xa;+ recovery_email: String&#xa;+ recovery_token_hash: String&#xa;+ password_hash: String&#xa;+ role: Enum('user', 'admin')&#xa;+ status: Enum('ACTIVE', 'SUSPENDED', 'DELETED')&#xa;+ is_guest: Boolean&#xa;+ last_login_at: Timestamp&#xa;+ created_at: Timestamp&#xa;---------------------------------&#xa;+ register()&#xa;+ login()&#xa;+ recoverWithCode()&#xa;+ updateProfile()&#xa;+ regenerateCode()&#xa;+ changePassword()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ECFDF5;strokeColor=#059669;strokeWidth=2;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="50" y="80" width="240" height="340" as="geometry" />
+    </mxCell>
+
+    <!-- Class: Post -->
+    <mxCell id="cls_post" value="Post&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ user_id: String [FK]&#xa;+ mood_tag: String&#xa;+ content: Text&#xa;+ is_private: Boolean&#xa;+ status: Enum('PENDING', 'APPROVED', 'REJECTED')&#xa;+ rejection_reason: String&#xa;+ created_at: Timestamp&#xa;+ updated_at: Timestamp&#xa;---------------------------------&#xa;+ create()&#xa;+ update()&#xa;+ delete()&#xa;+ getApproved()&#xa;+ toggleLike()&#xa;+ toggleSave()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=2;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="420" y="80" width="250" height="270" as="geometry" />
+    </mxCell>
+
+    <!-- Class: Comment -->
+    <mxCell id="cls_comment" value="Comment&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ post_id: String [FK]&#xa;+ parent_id: String [FK, Nullable]&#xa;+ user_id: String [FK, Nullable]&#xa;+ author_name: String&#xa;+ content: Text&#xa;+ is_ai_bot: Boolean&#xa;+ created_at: Timestamp&#xa;---------------------------------&#xa;+ create()&#xa;+ delete()&#xa;+ getByPostId()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="780" y="80" width="240" height="230" as="geometry" />
+    </mxCell>
+
+    <!-- Class: PostLike -->
+    <mxCell id="cls_like" value="PostLike&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ post_id: String [FK]&#xa;+ user_id: String [FK]&#xa;+ created_at: Timestamp" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;strokeWidth=1.5;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="420" y="420" width="180" height="110" as="geometry" />
+    </mxCell>
+
+    <!-- Class: SavedPost -->
+    <mxCell id="cls_saved" value="SavedPost&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ post_id: String [FK]&#xa;+ user_id: String [FK]&#xa;+ created_at: Timestamp" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;strokeWidth=1.5;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="630" y="420" width="180" height="110" as="geometry" />
+    </mxCell>
+
+    <!-- Class: PostReport -->
+    <mxCell id="cls_report" value="PostReport&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ post_id: String [FK]&#xa;+ reporter_id: String [FK]&#xa;+ reason: String&#xa;+ details: Text&#xa;+ status: Enum('PENDING', 'RESOLVED', 'REJECTED')&#xa;+ resolved_by: String&#xa;+ created_at: Timestamp&#xa;---------------------------------&#xa;+ submitReport()&#xa;+ resolveReport()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="840" y="380" width="240" height="210" as="geometry" />
+    </mxCell>
+
+    <!-- Class: AIChatSession & AIChatMessage -->
+    <mxCell id="cls_ai_session" value="AIChatSession&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ user_id: String [FK]&#xa;+ title: String&#xa;+ created_at: Timestamp&#xa;+ updated_at: Timestamp&#xa;---------------------------------&#xa;+ createSession()&#xa;+ getHistory()" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=2;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="50" y="520" width="240" height="170" as="geometry" />
+    </mxCell>
+
+    <mxCell id="cls_ai_message" value="AIChatMessage&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ session_id: String [FK]&#xa;+ sender: Enum('user', 'heli')&#xa;+ content: Text&#xa;+ emotion_detected: String&#xa;+ topic_detected: String&#xa;+ created_at: Timestamp" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="50" y="740" width="240" height="180" as="geometry" />
+    </mxCell>
+
+    <!-- Class: SafetyShieldLog -->
+    <mxCell id="cls_safety_log" value="SafetyShieldLog&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ user_id: String [FK]&#xa;+ risk_level: Enum('SAFE', 'WARNING', 'DANGER')&#xa;+ emergency_alert: Boolean&#xa;+ flagged_issues: JSON&#xa;+ advice: Text&#xa;+ created_at: Timestamp" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=2;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="340" y="660" width="260" height="170" as="geometry" />
+    </mxCell>
+
+    <!-- Class: ChatSession (P2P Signaling) -->
+    <mxCell id="cls_p2p" value="ChatSession (P2P WebRTC)&#xa;---------------------------------&#xa;+ id: String [PK]&#xa;+ peer_a_id: String [FK]&#xa;+ peer_b_id: String [FK]&#xa;+ topic: String&#xa;+ status: Enum('WAITING', 'CONNECTED', 'CLOSED')&#xa;+ created_at: Timestamp" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="640" y="660" width="260" height="150" as="geometry" />
+    </mxCell>
+
+    <!-- Core Service: GeminiClient -->
+    <mxCell id="cls_gemini" value="&lt;&lt;Service&gt;&gt;&#xa;GeminiClient&#xa;---------------------------------&#xa;+ defaultModel: String&#xa;+ fallbackModel: String&#xa;---------------------------------&#xa;+ inspectContent(text)&#xa;+ chatHeliBuddy(messages)&#xa;+ analyzeSafetyRisk(messages)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=2;fontColor=#0F172A;" vertex="1" parent="1">
+      <mxGeometry x="1150" y="220" width="240" height="170" as="geometry" />
+    </mxCell>
+
+    <!-- RELATIONSHIPS -->
+    <!-- User to Post (1 to N) -->
+    <mxCell id="rel_user_post" value="1          0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#059669;strokeWidth=1.5;" edge="1" parent="1" source="cls_user" target="cls_post">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Post to Comment (Composition: 1 to N) -->
+    <mxCell id="rel_post_comment" value="1          0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamond;endFill=1;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="cls_post" target="cls_comment">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Comment Self-Referencing (parent_id: 1 to N) -->
+    <mxCell id="rel_comment_self" value="parent_id&#xa;0..1        0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#2563EB;strokeWidth=1.5;" edge="1" parent="1" source="cls_comment" target="cls_comment">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1050" y="110" />
+          <mxPoint x="1050" y="240" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Post to PostLike (1 to N) -->
+    <mxCell id="rel_post_like" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamond;endFill=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="cls_post" target="cls_like">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Post to SavedPost (1 to N) -->
+    <mxCell id="rel_post_saved" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamond;endFill=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="cls_post" target="cls_saved">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- Post to PostReport (1 to N) -->
+    <mxCell id="rel_post_report" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="1" source="cls_post" target="cls_report">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- User to AIChatSession (1 to N) -->
+    <mxCell id="rel_user_ai" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="1" source="cls_user" target="cls_ai_session">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- AIChatSession to AIChatMessage (Composition: 1 to N) -->
+    <mxCell id="rel_ai_session_msg" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamond;endFill=1;strokeColor=#D97706;strokeWidth=1.5;" edge="1" parent="1" source="cls_ai_session" target="cls_ai_message">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- User to SafetyShieldLog (1 to N) -->
+    <mxCell id="rel_user_safety" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#DC2626;strokeWidth=1.5;" edge="1" parent="1" source="cls_user" target="cls_safety_log">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="320" y="280" />
+          <mxPoint x="320" y="720" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Post to GeminiClient (Dependency) -->
+    <mxCell id="rel_post_gemini" value="&lt;&lt;uses&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endSize=8;strokeColor=#CA8A04;strokeWidth=1.5;" edge="1" parent="1" source="cls_post" target="cls_gemini">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="545" y="40" />
+          <mxPoint x="1270" y="40" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- AIChatSession to GeminiClient (Dependency) -->
+    <mxCell id="rel_ai_gemini" value="&lt;&lt;uses&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endSize=8;strokeColor=#CA8A04;strokeWidth=1.5;" edge="1" parent="1" source="cls_ai_session" target="cls_gemini">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="200" y="960" />
+          <mxPoint x="1270" y="960" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- SafetyShieldLog to GeminiClient (Dependency) -->
+    <mxCell id="rel_safety_gemini" value="&lt;&lt;uses&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endSize=8;strokeColor=#CA8A04;strokeWidth=1.5;" edge="1" parent="1" source="cls_safety_log" target="cls_gemini">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="470" y="900" />
+          <mxPoint x="1220" y="900" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+  </root>
+</mxGraphModel>
+  </diagram>
+</mxfile>

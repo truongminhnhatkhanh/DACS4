@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+    <rect width="120" height="120" rx="60" fill="#fef08a" />
+    
+    <!-- Fox Ears -->
+    <polygon points="30,55 35,18 58,45" fill="#ea580c" />
+    <polygon points="35,48 38,26 52,44" fill="#ffffff" />
+    <polygon points="90,55 85,18 62,45" fill="#ea580c" />
+    <polygon points="85,48 82,26 68,44" fill="#ffffff" />
+    <!-- Fox Head -->
+    <polygon points="30,55 90,55 60,95" fill="#ea580c" />
+    <!-- White Cheeks -->
+    <polygon points="30,55 60,95 45,65" fill="#ffffff" />
+    <polygon points="90,55 60,95 75,65" fill="#ffffff" />
+    <!-- Nose -->
+    <circle cx="60" cy="93" r="4.5" fill="#0f172a" />
+    <!-- Eyes -->
+    <ellipse cx="48" cy="58" rx="3" ry="4.5" fill="#0f172a" />
+    <ellipse cx="72" cy="58" rx="3" ry="4.5" fill="#0f172a" />
+  
+  </svg>
